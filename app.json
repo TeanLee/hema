@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/sort/sort",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/shopping/shopping"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0eb6ff",
+    "navigationBarTitleText": "盒马生鲜",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color": "#a1a1a1",
+    "selectedColor":"#2af8ff",
+    "backgroundColor":"#ffffff",
+    "borderStyle":"#e0e0e0",
+    "list": [
+        {
+        "pagePath":"pages/index/index",
+        "iconPath":"./assets/icons/hema.png",
+        "selectedIconPath":"./assets/icons/hema-sel.png",
+        "text":"首页"
+      },
+      {
+        "pagePath":"pages/sort/sort",
+        "iconPath":"./assets/icons/sort.png",
+        "selectedIconPath":"./assets/icons/sort-sel.png",
+        "text":"分类"
+      },
+      {
+        "pagePath":"pages/shopping/shopping",
+        "iconPath":"./assets/icons/shopping.png",
+        "selectedIconPath":"./assets/icons/shopping-sel.png",
+        "text":"购物车"
+      },
+      {
+        "pagePath":"pages/mine/mine",
+        "iconPath":"./assets/icons/mine.png",
+        "selectedIconPath":"./assets/icons/mine-sel.png",
+        "text":"我的"
+      }
+    ]
+  }
+}
