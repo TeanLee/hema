@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="page__hd">
+    <view class="page__hd__input-left left">
+      <image src="../../assets/icons/position.png" />
+    </view>
+    <view class="page__hd-input left center">
+      <image src="../../assets/icons/search.png" />
+      奇异果
+    </view>
+    <view class="page__hd__input-right left">
+      <image src="../../assets/icons/mail.png" />
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <swiper class="page__bd__scroll">
+      <swiper-item>
+        <image class="page__scroll__item" src="https://gw.alicdn.com/tfs/TB1AoIXeLDH8KJjy1XcXXcpdXXa-750-291.jpg_Q90.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image class="page__scroll__item" src="https://gw.alicdn.com/tfs/TB1AoIXeLDH8KJjy1XcXXcpdXXa-750-291.jpg_Q90.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image class="page__scroll__item" src="https://img.alicdn.com/imgextra/i2/745949152/TB2ATrSexPI8KJjSspfXXcCFXXa_!!745949152.jpg_Q90.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image class="page__scroll__item"src="https://img.alicdn.com/tfs/TB1OYB8elfH8KJjy1XbXXbLdXXa-750-291.jpg_Q90.jpg"/>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="page__ft"></view>
+</view>

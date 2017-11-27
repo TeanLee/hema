@@ -1,0 +1,33 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+.page__hd {
+  width: 100%;
+  height: 88rpx;
+  background-color: #0eb6ff;
+}
+.left {
+  float: left;
+  display: inline-block;
+}
+.page__hd image {
+  width: 44rpx;
+  height: 44rpx;
+  margin: 6rpx 28rpx;
+}
+.page__hd-input {
+  width: 544rpx;
+  height: 66rpx;
+  background-color: #ffffff;
+  border-radius: 33rpx;
+  font-size: 32rpx;
+  color: #cbcbcb;
+  text-align: center;
+  line-height: 66rpx;
+}
+.page__hd-input image {
+  width: 32rpx;
+  height: 32rpx;
+  margin: 0;
+}
