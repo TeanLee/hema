@@ -1,0 +1,26 @@
+<view class="sort">
+    <view class="sort__hd">
+        <view class="sort__title">
+            <a class="sort__title__text">分类</a>
+            <view class="sort__hd__right right">
+                <image src="../../assets/icons/sort-search.png" />
+            </view>
+        </view>
+    </view>
+    <view class="sort__bd">
+        <view class="sort__bd__image">
+            <image src="//img.alicdn.com/tfs/TB1vd_2eS_I8KJjy0FoXXaFnVXa-520-280.jpg_q90_.webp" />
+        </view>
+        <ul class="sort__bd__ul">
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+            <li class="sort__bd__li"></li>
+        </ul>
+    </view>
+</view>
