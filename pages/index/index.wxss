@@ -31,3 +31,71 @@
   height: 32rpx;
   margin: 0;
 }
+.page__bd .page__bd__scroll image {
+  width: 100%;
+  height: 300rpx;
+}
+.page__bd .page__scroll__btns {
+  width: 170rpx;
+  height: 16rpx;
+  position: absolute;
+  top: 354rpx;
+  left: 280rpx;
+}
+.page__bd .page__scroll__btns .page__scroll__btn {
+  float: left;
+  display: inline-block;
+  width: 14rpx;
+  height: 14rpx;
+  border: 1px solid #8e8d7f;
+  border-radius: 7rpx;
+  margin: 0 8rpx;
+}
+.active {
+  background-color: #23a3ff;
+  border-color: #23a3ff;
+}
+.page__bd .page__bd__notice {
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff4d1;
+  color: #878887;
+  font-size: 30rpx;
+  overflow: hidden;
+  overflow: hidden;
+}
+.page__bd .page__bd__notice image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 20rpx;
+  display: inline-block;
+  float: left;
+}
+.page__bd .page__bd__notice .page__notice__content {
+  display: block;
+  width: 600rpx;
+  height: 40rpx;
+  float: left;
+  margin-top: 14rpx;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+}
+.page__bd .page__bd__notice .page__notice__right {
+  display: block;
+  width: 22rpx;
+  height: 22rpx;
+  font-size: 20rpx;
+  float: right;
+  margin-top: 24rpx;
+  margin-right: 44rpx;
+}
+.page__bd .page__bd__sorts {
+  width: 690rpx;
+  height: 320rpx;
+  border: 1px solid red;
+}
+.page__bd .page__bd__sorts .page__bd__sort {
+  width: 100rpx;
+  height: 144rpx;
+}
