@@ -2,9 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/sort/sort",
+    "pages/shopping/shopping",
     "pages/mine/mine",
-    "pages/logs/logs",
-    "pages/shopping/shopping"
+    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
