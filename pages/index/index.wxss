@@ -90,12 +90,55 @@
   margin-top: 24rpx;
   margin-right: 44rpx;
 }
-.page__bd .page__bd__sorts {
-  width: 690rpx;
+.page__bd ul.page__bd__sorts {
+  width: 700rpx;
   height: 320rpx;
   border: 1px solid red;
+  display: block;
+  margin-left: 24rpx;
 }
-.page__bd .page__bd__sorts .page__bd__sort {
+.page__bd ul.page__bd__sorts li.page__bd__sort {
   width: 100rpx;
   height: 144rpx;
+  outline: 1px solid black;
+  margin-right: 50rpx;
+}
+.page__bd ul.page__bd__sorts li.page__bd__sort:nth-child(5n) {
+  margin-right: 0;
+  margin-bottom: 32rpx;
+}
+.page__bd ul.page__bd__sorts li.page__bd__sort .page__sort__image {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  background-color: #be8159;
+}
+.page__sort__image image {
+  width: 110rpx;
+  height: 110rpx;
+  transform: rotate(-45deg);
+  border-bottom-left-radius: 56rpx;
+  border-bottom-right-radius: 56rpx;
+}
+.page__bd ul.page__bd__sorts li.page__bd__sort p {
+  font-size: 24rpx;
+  color: #535353;
+}
+.page__bd__scrollx-section .scrollx-section__title {
+  width: 682rpx;
+  height: 70rpx;
+  margin-top: 70rpx;
+  outline: 1px solid red;
+}
+.page__bd__scrollx-section .scrollx-section__title__left image {
+  width: 50rpx;
+  height: 60rpx;
+}
+.page__bd__scrollx-section .scrollx-section__title__left p {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.page__bd__scrollx-section .scrollx-section__title__right p {
+  font-size: 24rpx;
+  font-weight: bold;
 }

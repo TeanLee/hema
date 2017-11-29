@@ -45,8 +45,13 @@
       <a class="page__notice__right">1/1</a>
     </view>
 
-    <ul class="page__bd__sorts">
-      <li class="page__bd__sort left"></li>
+    <ul class="page__bd__sorts center">
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image">
+          <image src="//img.alicdn.com/bao/uploaded/i1/TB1zLQaQFXXXXaNXFXXXXXXXXXX_!!0-item_pic.jpg_160x160.jpg" />
+        </view>
+        <p>休闲零食</p>
+      </li>
       <li class="page__bd__sort left"></li>
       <li class="page__bd__sort left"></li>
       <li class="page__bd__sort left"></li>
@@ -57,6 +62,25 @@
       <li class="page__bd__sort left"></li>
       <li class="page__bd__sort left"></li>
     </ul>
+
+    <view class="page__bd__scrollx-section">
+      <view class="scrollx-section__title">
+        <view class="scrollx-section__title__left left">
+          <image src="../../assets/icons/crown.png" />
+          <p>今日王牌大赏</p>
+        </view>
+        <view class="scrollx-section__title__right right">
+          <p>更多</p>
+          <a></a>
+        </view>
+      </view>
+      <scroll-view scroll-x class="scrollx-section__content">
+        <image/>
+        <view class="scrollx-section__content__title"></view>
+        <view class="scrollx-section__content__blod border-right"></view>
+        <view class="scrollx-section__content__blod"></view>
+      </scroll-view>
+    </view>
 
   </view>
 
