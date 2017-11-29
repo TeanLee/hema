@@ -1,2 +1,11 @@
-<!--pages/shopping/shopping.wxml-->
-<text>pages/shopping/shopping.wxml</text>
+<view class="shopping">
+    <view class="shopping__hd">
+        <view class="shopping__hd__content">
+            <view class="shopping__title">
+                购物车
+                <a class="shopping__title__delete right">删除</a>
+            </view>
+        </view>
+    </view>
+    <view class="shopping__bd"></view>
+</view>
