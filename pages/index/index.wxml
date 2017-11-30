@@ -66,19 +66,39 @@
     <view class="page__bd__scrollx-section">
       <view class="scrollx-section__title">
         <view class="scrollx-section__title__left left">
-          <image src="../../assets/icons/crown.png" />
-          <p>今日王牌大赏</p>
+          <image src="../../assets/icons/crown.png" class="left" />
+          <p class="left">今日王牌大赏</p>
         </view>
         <view class="scrollx-section__title__right right">
-          <p>更多</p>
-          <a></a>
+          <p class="left">更多</p>
+          <a class="left"></a>
         </view>
       </view>
       <scroll-view scroll-x class="scrollx-section__content">
-        <image/>
-        <view class="scrollx-section__content__title"></view>
-        <view class="scrollx-section__content__blod border-right"></view>
-        <view class="scrollx-section__content__blod"></view>
+        <view class="scrollx-section__content__item">
+          <view class="scrollx-section__item__wrapper">
+            <image/>
+            <view class="scrollx-section__item__title"></view>
+            <view class="scrollx-section__item__blod border-right"></view>
+            <view class="scrollx-section__item__blod"></view>
+          </view>
+        </view>
+        <view class="scrollx-section__content__item">
+          <view class="scrollx-section__item__wrapper">
+            <image/>
+            <view class="scrollx-section__item__title"></view>
+            <view class="scrollx-section__item__blod border-right"></view>
+            <view class="scrollx-section__item__blod"></view>
+          </view>
+        </view>
+        <view class="scrollx-section__content__item">
+          <view class="scrollx-section__item__wrapper">
+            <image/>
+            <view class="scrollx-section__item__title"></view>
+            <view class="scrollx-section__item__blod border-right"></view>
+            <view class="scrollx-section__item__blod"></view>
+          </view>
+        </view>
       </scroll-view>
     </view>
 
