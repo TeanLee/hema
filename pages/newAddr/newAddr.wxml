@@ -1,0 +1,43 @@
+<view class="newAddr__hd">
+    <text class="newAddr__add left" bindtap="backToChooseAddr">返回</text>
+    <text class="newAddr__title">选择收货地址</text>
+    <text class="newAddr__add right">保存</text>
+</view>
+<view class="newAddr__bd">
+    <view class="weui-cells weui-cells_form gray-input">
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label mr60">收货地址</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入收货地址号" />
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label mr94">门牌号</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="联系人姓名" />
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells weui-cells_form second-weui-cells">
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <text class="weui-label mr48">联系人</text>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="联系人电话" />
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__hd">
+                <label class="weui-label mr44">手机号</label>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入门牌号" />
+            </view>
+        </view>
+    </view>
+</view>
