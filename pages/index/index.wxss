@@ -93,14 +93,15 @@
 .page__bd ul.page__bd__sorts {
   width: 700rpx;
   height: 320rpx;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: block;
   margin-left: 24rpx;
 }
 .page__bd ul.page__bd__sorts li.page__bd__sort {
   width: 100rpx;
   height: 144rpx;
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
+  margin-top: 10rpx;
   margin-right: 50rpx;
 }
 .page__bd ul.page__bd__sorts li.page__bd__sort:nth-child(5n) {
@@ -108,17 +109,47 @@
   margin-bottom: 32rpx;
 }
 .page__bd ul.page__bd__sorts li.page__bd__sort .page__sort__image {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 48rpx;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 100rpx;
+  /* background-color: #be8159; */
+}
+.be8159 {
   background-color: #be8159;
 }
+.a1b1ca {
+  background-color: #a1b1ca;
+}
+.ffc793 {
+  background-color: #ffc793;
+}
+.c2d971 {
+  background-color: #c2d971;
+}
+.f5cb8d {
+  background-color: #f5cb8d;
+}
+.c83d7f4 {
+  background-color: #83d7f4;
+}
+.ff9292 {
+  background-color: #ff9292;
+}
+.c2ec4c6 {
+  background-color: #2ec4c6;
+}
+.c8599b9 {
+  background-color: #8599b9;
+}
+.f3d24c {
+  background-color: #f3d24c;
+}
 .page__sort__image image {
-  width: 110rpx;
-  height: 110rpx;
+  width: 96rpx;
+  height: 96rpx;
   transform: rotate(-45deg);
-  border-bottom-left-radius: 56rpx;
-  border-bottom-right-radius: 56rpx;
+  border-bottom-left-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
 }
 .page__bd ul.page__bd__sorts li.page__bd__sort p {
   font-size: 24rpx;
@@ -128,7 +159,7 @@
   width: 682rpx;
   height: 70rpx;
   margin-top: 70rpx;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   margin-left: 38rpx;
   line-height: 70rpx;
 }
@@ -175,9 +206,10 @@
 .scrollx-section__content__item {
   width: 626rpx;
   height: 304rpx;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   display: inline-block;
   margin-left: 20rpx;
+  overflow: hidden;
 }
 .scrollx-section__content__item.last {
   margin-right: 20rpx;
@@ -185,28 +217,84 @@
 .scrollx-section__content .scrollx-section__content__item .scrollx-section__item__wrapper {
   width: 572rpx;
   height: 222rpx;
-  outline: 1px solid purple;
+  /* outline: 1px solid purple; */
   margin-left: 30rpx;
   margin-top: 40rpx;
+  overflow: hidden;
 }
-.scrollx-section__item__wrapper image {
+.view__wrapper__image {
   width: 210rpx;
   height: 180rpx;
-  margin-right: 30rpx;
-  outline: 1px solid blue;
+  /* outline: 1px solid blue; */
+  margin-top: 20rpx;
+  /* background-image: url("https://img.alicdn.com/imgextra/i1/TB1l8pVRXXXXXXcXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg"); */
 }
-/* .item__detail {
-  width: 300rpx;
-  height: 224rpx;
-  outline: 1px solid purple;
+.view__wrapper__image image {
+  width:210rpx;
+  height: 180rpx;
 }
-.scrollx-section__item__title p:nth-child(n+1) {
+.view__wrapper__intro {
+  width: 336rpx;
+  height: 222rpx;
+  /* outline: 1px solid green; */
+  float: right;
+  margin-top: -200rpx;
+  overflow: hidden;
+}
+.wrapper__intro__title {
+  width: 318rpx;
+}
+.wrapper__intro__title text {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.wrapper__intro__content{
+  width: 166rpx;
+  height: 64rpx;
+}
+.scrollx-section__content__item text {
+  display: block;
+}
+.wrapper__intro__title text:nth-child(2n) {
+  font-size: 22rpx;
+  color: #a9a9a9;
+  font-weight: blod;
+}
+.wrapper__intro__title text:nth-child(2n+1) {
   font-size: 28rpx;
-  color: #000000;
   font-weight: blod;
+  color: #393939;
 }
-.scrollx-section__item__title p:nth-child(2n) {
+.wrapper__intro__content text:nth-child(2n+1) {
   font-size: 34rpx;
-  font-weight: blod;
-  color: #000000;
-} */
+  font-weight: 800;
+  color: #434343;
+}
+.wrapper__intro__content text:nth-child(2n) {
+  font-size: 22rpx;
+  color: #a5a5a5;
+}
+.wrapper__intro__price {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  margin-top: 80rpx;
+}
+.wrapper__intro__price a {
+  color: #ff7c2a;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.wrapper__intro__price a:nth-child(2) {
+  color: #a6a6a6;
+  font-size: 24rpx;
+}
+.wrapper__intro__price a:nth-child(3) {
+  color: #25a4ff;
+  font-size: 40rpx;
+  float: right;
+  font-weight: 800;
+  /* margin-top: 6rpx; */
+  margin-right: 30rpx;
+}

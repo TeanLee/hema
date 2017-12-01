@@ -1,14 +1,14 @@
 <view class="container">
   <view class="page__hd">
     <view class="page__hd__input-left left">
-      <image src="../../assets/icons/position.png" />
+      <image src="../../assets/icons/position.png" bindtap="chooseAddr" />
     </view>
     <view class="page__hd-input left center">
       <image src="../../assets/icons/search.png" />
       奇异果
     </view>
     <view class="page__hd__input-right left">
-      <image src="../../assets/icons/mail.png" />
+      <image bindtap="scan" src="../../assets/icons/scan.png" />
     </view>
   </view>
 
@@ -47,20 +47,65 @@
 
     <ul class="page__bd__sorts center">
       <li class="page__bd__sort left center">
-        <view class="page__sort__image">
-          <image src="//img.alicdn.com/bao/uploaded/i1/TB1zLQaQFXXXXaNXFXXXXXXXXXX_!!0-item_pic.jpg_160x160.jpg" />
+        <view class="page__sort__image be8159">
+          <image src="../../assets/images/coffee.png" />
         </view>
         <p>休闲零食</p>
       </li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
-      <li class="page__bd__sort left"></li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image a1b1ca">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>中外名酒</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image ffc793">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>饮料/水</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image c2d971">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>乳品冲饮</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image f5cb8d">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>粮油副食</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image c83d7f4">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>美妆个护</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image ff9292">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>母婴保健</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image c2ec4c6">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>厨卫清洁</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image c8599b9">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>日用百货</p>
+      </li>
+      <li class="page__bd__sort left center">
+        <view class="page__sort__image f3d24c">
+          <image src="../../assets/images/coffee.png" />
+        </view>
+        <p>礼品卡券</p>
+      </li>
     </ul>
 
     <view class="page__bd__scrollx-section">
@@ -77,26 +122,74 @@
       <scroll-view scroll-x class="scrollx-section__content">
         <view class="scrollx-section__content__item">
           <view class="scrollx-section__item__wrapper">
-            <image/>
-            <view class="scrollx-section__item__title"></view>
-            <view class="scrollx-section__item__blod border-right"></view>
-            <view class="scrollx-section__item__blod"></view>
+            <view class="view__wrapper__image">
+                <image src="https://img.alicdn.com/imgextra/i1/TB1l8pVRXXXXXXcXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" />
+            </view>
+            <view class="view__wrapper__intro">
+              <view class="wrapper__intro__title">
+                <text>奔富洛神山庄 赤霞珠红葡萄酒</text>
+                <text>奔富 洛神山庄 赤珠霞 原瓶葡萄酒</text>
+              </view>
+              <view class="wrapper__intro__content left">
+                <text>澳洲进口</text>
+                <text>销量之星</text>
+              </view>
+              <view class="wrapper__intro__content right">
+                  <text>单宁浓酒</text>
+                  <text>呼吸酒封</text>
+              </view>
+              <view class="wrapper__intro__price">
+                <a>￥238.00</a><a>/箱</a><a>+</a>
+              </view>
+            </view>
           </view>
         </view>
         <view class="scrollx-section__content__item">
           <view class="scrollx-section__item__wrapper">
-            <image/>
-            <view class="scrollx-section__item__title"></view>
-            <view class="scrollx-section__item__blod border-right"></view>
-            <view class="scrollx-section__item__blod"></view>
+            <view class="view__wrapper__image">
+                <image src="https://img.alicdn.com/imgextra/i1/TB1l8pVRXXXXXXcXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" />
+            </view>
+            <view class="view__wrapper__intro">
+              <view class="wrapper__intro__title">
+                <text>奔富洛神山庄 赤霞珠红葡萄酒</text>
+                <text>奔富 洛神山庄 赤珠霞 原瓶葡萄酒</text>
+              </view>
+              <view class="wrapper__intro__content left">
+                <text>澳洲进口</text>
+                <text>销量之星</text>
+              </view>
+              <view class="wrapper__intro__content right">
+                  <text>单宁浓酒</text>
+                  <text>呼吸酒封</text>
+              </view>
+              <view class="wrapper__intro__price">
+                <a>￥238.00</a><a>/箱</a><a>+</a>
+              </view>
+            </view>
           </view>
         </view>
         <view class="scrollx-section__content__item">
           <view class="scrollx-section__item__wrapper">
-            <image/>
-            <view class="scrollx-section__item__title"></view>
-            <view class="scrollx-section__item__blod border-right"></view>
-            <view class="scrollx-section__item__blod"></view>
+            <view class="view__wrapper__image">
+                <image src="https://img.alicdn.com/imgextra/i1/TB1l8pVRXXXXXXcXFXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg" />
+            </view>
+            <view class="view__wrapper__intro">
+              <view class="wrapper__intro__title">
+                <text>奔富洛神山庄 赤霞珠红葡萄酒</text>
+                <text>奔富 洛神山庄 赤珠霞 原瓶葡萄酒</text>
+              </view>
+              <view class="wrapper__intro__content left">
+                <text>澳洲进口</text>
+                <text>销量之星</text>
+              </view>
+              <view class="wrapper__intro__content right">
+                  <text>单宁浓酒</text>
+                  <text>呼吸酒封</text>
+              </view>
+              <view class="wrapper__intro__price">
+                <a>￥238.00</a><a>/箱</a><a>+</a>
+              </view>
+            </view>
           </view>
         </view>
       </scroll-view>

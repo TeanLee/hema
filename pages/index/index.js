@@ -6,6 +6,13 @@ Page({
   data: {
     activeIndex: 0
   },
+  scan: function() {
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+      }
+    })
+  },
   changeTag:  function(e){
     var type = e.target.dataset.index;
     this.setData({
@@ -17,6 +24,11 @@ Page({
     this.setData({
       activeIndex: type
     });
+  },
+  chooseAddr: function() {
+    wx.navigateTo({
+      url: "../chooseAddress/chooseAddress"
+    })
   },
   //事件处理函数
   bindViewTap: function() {
