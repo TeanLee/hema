@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsList: []
+    goodsList: [],
+    sum: 0
   },
 
   /**
@@ -15,7 +16,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       goodsList: app.globalData.cardList
-    })
+    });
+    this.sumMoney();
   },
   addCount:function (e) {
     var that = this;
@@ -24,12 +26,16 @@ Page({
     console.log(that.data.goodsList[goodId]);
     that.data.goodsList[goodId].count++;
     console.log(that.data.goodsList[goodId]);
+    this.setData({
+      goodsList: that.data.goodsList
+    })
+    this.sumMoney();
   },
   reduceCount: function(e) {
     var that = this;
     const goodId = e.currentTarget.id;
     // console.log(that.data.goodsList[goodId]);
-    if(that.data.goodsList[goodId].count <= 0) {
+    if(that.data.goodsList[goodId].count <= 1) {
       that.data.goodsList[goodId].count = 1;
       wx.showModal({
         title: '数量小于1',
@@ -40,6 +46,25 @@ Page({
       that.data.goodsList[goodId].count--;
     }
     // console.log(that.data.goodsList[goodId]);
+    this.setData({
+      goodsList: that.data.goodsList
+    })
+    this.sumMoney();
+  },
+  // 计算所有商品的钱数
+  sumMoney: function() {
+    var count = 0;
+    const goods = this.data.goodsList;
+    console.log(goods);
+    for(let i = 0; i < goods.length; i++) {
+      // console.log(goods[i].count);
+      // console.log(goods[i].price);
+      count += goods[i].count*goods[i].price;
+    }
+    // console.log(count);
+    this.setData({
+      sum: count
+    })
   },
 
   /**
