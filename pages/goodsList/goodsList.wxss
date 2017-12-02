@@ -1,0 +1,71 @@
+.goodsList {
+    width: 100%;
+    height: 100%;
+}
+.goodsList__hd {
+    width: 100%;
+    height: 104rpx;
+    background-color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #ececec;
+}
+.goodsList__title {
+    font-size: 37rpx;
+    line-height: 104rpx;
+}
+.goodsList__title__text {
+    margin-left: 50rpx;
+    color: #6b6b6b;
+}
+.goodsList__hd__right, .goodsList__hd__right image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    margin-top: 16rpx;
+    float: right;
+}
+.goodsList__bd {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.goodsList__bd .weui-cells {
+    width: 93.75%;
+    margin-left: 3.125%;
+    overflow: hidden;
+}
+.goodsList__bd .weui-cell__hd {
+    width: 30%;
+    height: 100px;
+    margin-right: 20rpx;
+    color: #212121;
+    /* outline: 1px solid red; */
+}
+.goodsList__bd .weui-cell__hd image {
+    width: 200rpx;
+    height: 200rpx;
+}
+.goodsList__bd__intro {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+}
+.goodsList__bd .weui-cell__bd {
+    width: 60%;
+    height: 200rpx;
+    display: block;
+    /* outline: 1px solid green; */
+}
+.goodsList__bd .weui-cell__bd .view__bd__price {
+    margin-top: 90rpx;
+}
+.goodsList__bd .weui-cell__bd .view__bd__price .price {
+    font-size: 36rpx;
+    color: #ff3e02;
+}
+.goodsList__bd .weui-cell__bd .view__bd__price .add {
+    font-size: 50rpx;
+    font-weight: 800;
+    color: #27a5ff;
+}

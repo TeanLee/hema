@@ -1,0 +1,31 @@
+<view class="goodsList">
+    <view class="goodsList__hd">
+        <view class="goodsList__hd">
+            <view class="goodsList__title">
+                <a class="goodsList__title__text">分类</a>
+                <view class="goodsList__hd__right right">
+                    <image src="../../assets/icons/sort-search.png" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="goodsList__bd">
+        <scroll-view scroll-y>
+            <view class="weui-cells">
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                        <image src="//img.alicdn.com/bao/uploaded/i4/725677994/TB1z8ylX8DH8KJjSspnXXbNAVXa_!!0-item_pic.jpg_160x160.jpg" />
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view class="goodsList__bd__intro">皇冠丹麦曲奇</view>
+                        <view class="view__bd__price">
+                            <text class="price left">￥9.90/袋</text>
+                            <text class="add right">+</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="goodsList__ft"></view>
+</view>
