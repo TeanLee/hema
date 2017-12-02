@@ -20,12 +20,12 @@ Page({
     })
   },
   addInCart: function(e) {
-    console.log(this.data.goods);
-    var good = this.data.goods[e.currentTarget.id];
-    var cart = app.globalData.cardList;
+    // console.log(this.data.goods);
+    const good = this.data.goods[e.currentTarget.id];
+    const cart = app.globalData.cardList;
     cart.push(good);
-    console.log(e.currentTarget.id);
-    console.log(cart);
+    // console.log(e.currentTarget.id);
+    // console.log(cart);
   },
 
   /**
