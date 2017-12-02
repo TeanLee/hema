@@ -12,7 +12,7 @@
     <view class="goodsList__bd">
         <scroll-view scroll-y>
 
-            <block wx:for="{{goods}}" wx:key="index">
+            <block wx:for="{{goods}}" wx:key="index" wx:for-index="index">
                 <view class="weui-cells">
                     <view class="weui-cell">
                         <view class="weui-cell__hd">
@@ -22,7 +22,7 @@
                             <view class="goodsList__bd__intro">{{item.name}}</view>
                             <view class="view__bd__price">
                                 <text class="price left">￥{{item.price}}/{{item.unit}}</text>
-                                <text class="add right">+</text>
+                                <text class="add right" bindtap="addInCart" id="{{index}}">+</text>
                             </view>
                         </view>
                     </view>
