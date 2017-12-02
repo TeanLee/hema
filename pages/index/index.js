@@ -4,7 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    activeIndex: 0
+    activeIndex: 0,
+    scrollXList: []
   },
   scan: function() {
     wx.scanCode({
@@ -30,12 +31,26 @@ Page({
       url: "../chooseAddress/chooseAddress"
     })
   },
+  linkToList: function() {
+    wx.navigateTo({
+      url: "../goodsList/goodsList"
+    })
+  },
   //事件处理函数
   bindViewTap: function() {
     
   },
   onLoad: function () {
-    
+    wx.request({
+      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getIndexScrollX",
+      success: (res) => {
+        console.log(res.data);
+        this.setData({
+          scrollXList: res.data.data.goods
+        })
+        console.log(res.data.data.goods);
+      }
+    })
   },
   getUserInfo: function(e) {
     
