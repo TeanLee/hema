@@ -5,14 +5,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    goods: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.request({
+      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods",
+      success: (res) => {
+        console.log(res.data);
+        this.setData({
+          goods: res.data.data.goods
+        })
+        console.log(res.data.data.goods);
+      }
+    })
   },
 
   /**

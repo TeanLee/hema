@@ -11,20 +11,23 @@
     </view>
     <view class="goodsList__bd">
         <scroll-view scroll-y>
-            <view class="weui-cells">
-                <view class="weui-cell">
-                    <view class="weui-cell__hd">
-                        <image src="//img.alicdn.com/bao/uploaded/i4/725677994/TB1z8ylX8DH8KJjSspnXXbNAVXa_!!0-item_pic.jpg_160x160.jpg" />
-                    </view>
-                    <view class="weui-cell__bd">
-                        <view class="goodsList__bd__intro">皇冠丹麦曲奇</view>
-                        <view class="view__bd__price">
-                            <text class="price left">￥9.90/袋</text>
-                            <text class="add right">+</text>
+
+            <block wx:for="{{goods}}" wx:key="index">
+                <view class="weui-cells">
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image src="{{item.image}}" />
+                        </view>
+                        <view class="weui-cell__bd">
+                            <view class="goodsList__bd__intro">{{item.name}}</view>
+                            <view class="view__bd__price">
+                                <text class="price left">￥{{item.price}}/{{item.unit}}</text>
+                                <text class="add right">+</text>
+                            </view>
                         </view>
                     </view>
                 </view>
-            </view>
+            </block>
         </scroll-view>
     </view>
     <view class="goodsList__ft"></view>

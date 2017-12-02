@@ -58,7 +58,7 @@
     /* outline: 1px solid green; */
 }
 .goodsList__bd .weui-cell__bd .view__bd__price {
-    margin-top: 90rpx;
+    margin-top: 70rpx;
 }
 .goodsList__bd .weui-cell__bd .view__bd__price .price {
     font-size: 36rpx;
