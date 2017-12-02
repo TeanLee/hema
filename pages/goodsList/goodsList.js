@@ -1,3 +1,4 @@
+const app = getApp();
 // pages/goodsList/goodsList.js
 Page({
 
@@ -7,21 +8,24 @@ Page({
   data: {
     goods: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     wx.request({
       url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods",
       success: (res) => {
-        console.log(res.data);
+        console.log(res.data.data.goods);
         this.setData({
           goods: res.data.data.goods
         })
-        console.log(res.data.data.goods);
       }
     })
+  },
+  addInCart: function(e) {
+    console.log(this.data.goods);
+    var good = this.data.goods[e.currentTarget.id];
+    var cart = app.globalData.cardList;
+    cart.push(good);
+    console.log(e.currentTarget.id);
+    console.log(cart);
   },
 
   /**
