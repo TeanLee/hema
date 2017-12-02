@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    address: '',
+    num: '',
+    name: '',
+    phone: ''
   },
   addNewAddr: function() {
     wx.navigateTo({
@@ -31,7 +34,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this;
+    wx.getStorage({
+      key: "name",
+      success: function(res) {
+        console.log(res);
+        if(res.data.length > 0) {
+          that.setData({
+            address: res.data[0].address,
+            num: res.data[1].num,
+            name: res.data[2].name,
+            phone: res.data[3].phone
+          })
+        }
+      }
+    })
   },
 
   /**

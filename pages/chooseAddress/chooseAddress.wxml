@@ -10,8 +10,8 @@
     <view class="choose-addr__bd__addr">
         <text>我的收货地址</text>
         <view class="choose-addr__bd__session">
-            <text>李婷婷 15083793729</text>
-            <text>上海大厦111</text>
+            <text>{{name}} {{phone}}</text>
+            <text>{{address}}{{num}}</text>
         </view>
     </view>
 
