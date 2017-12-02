@@ -1,4 +1,5 @@
 <view class="choose-addr__hd">
+    <text class="newAddr__add left" bindtap="backToChooseAddr">返回</text>
     <text class="choose-addr__title">选择收货地址</text>
     <text class="choose-addr__add right" bindtap="addNewAddr">新增地址</text>
 </view>
