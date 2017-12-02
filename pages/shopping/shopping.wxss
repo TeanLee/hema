@@ -81,6 +81,8 @@
     outline: 1px solid #d9d9d9;
     line-height: 104rpx;
     overflow: hidden;
+    background-color: white;
+    position: fixed;
 }
 .shopping__ft__hd {
     margin-left: 20rpx;
@@ -113,4 +115,7 @@
     color: #ffffff;
     text-align: center;
     font-size: 34rpx;
+}
+.shopping__bd {
+    margin-bottom: 120rpx;
 }
