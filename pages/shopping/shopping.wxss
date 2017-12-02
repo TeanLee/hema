@@ -21,3 +21,53 @@
     font-size: 30rpx;
     margin-right: 36rpx;
 }
+.shopping__bd .weui-cell__hd icon {
+    margin-right: 20rpx;
+}
+.weui-cell__bd, .weui-cell__bd image {
+    width: 148rpx;
+    height: 148rpx;
+}
+.weui-cell__ft {
+    width: 482rpx;
+    height: 170rpx;
+    display: block;
+    /* outline: 1px solid red; */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.weui-cell__ft text {
+    display: block;
+    padding-left: 20rpx;
+}
+.weui-cell__ft .proIntr {
+    font-size: 26rpx;
+    color: #363636;
+    height: 80rpx;
+    padding-top: 20rpx;
+}
+.weui-cell__ft .price {
+    font-size: 30rpx;
+    color: #ff6f14;
+    clear: both;
+}
+.weui-cell__ft .count {
+    width: 210rpx;
+    height: 50rpx;
+    border: 1px solid #e5e5e6;
+    float: right;
+    border-radius: 10rpx;
+}
+.weui-cell__ft .count text {
+    display: block;
+    width: 50rpx;
+    height: 50rpx;
+    text-align: center;
+    padding: 0;
+}
+.weui-cell__ft .count .number {  
+    display: block;
+    width: 104rpx;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
