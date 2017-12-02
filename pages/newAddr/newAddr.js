@@ -5,12 +5,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    address: '',
+    num: '',
+    name: '',
+    phone: ''
   },
   backToChooseAddr: function() {
     wx.navigateTo({
       url: "../chooseAddress/chooseAddress"
     });
+  },
+  getAddress: function(e) {
+    this.setData({
+      address: e.detail.value
+    })
+  },
+  getNum: function(e) {
+    this.setData({
+      num: e.detail.value
+    })
+  },
+  getName: function(e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  getPhone: function(e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  saveInfo: function() {
+    wx.setStorage({
+      key: "name",
+      data: [{address:this.data.address}, {num: this.data.num}, {name: this.data.name}, {phone: this.data.phone}],
+      success: function() {
+        wx.showToast({
+          title: "地址保存成功",
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
   },
 
   /**
