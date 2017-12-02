@@ -1,7 +1,7 @@
 <view class="newAddr__hd">
     <text class="newAddr__add left" bindtap="backToChooseAddr">返回</text>
     <text class="newAddr__title">选择收货地址</text>
-    <text class="newAddr__add right">保存</text>
+    <text bindtap="saveInfo" class="newAddr__add right">保存</text>
 </view>
 <view class="newAddr__bd">
     <view class="weui-cells weui-cells_form gray-input">
@@ -10,7 +10,7 @@
                 <text class="weui-label mr60">收货地址</text>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="请输入收货地址号" />
+                <input bindinput="getAddress" class="weui-input" placeholder="请输入收货地址" />
             </view>
         </view>
         <view class="weui-cell">
@@ -18,7 +18,7 @@
                 <text class="weui-label mr94">门牌号</text>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="联系人姓名" />
+                <input bindinput="getNum" class="weui-input" placeholder="门牌号" />
             </view>
         </view>
     </view>
@@ -28,7 +28,7 @@
                 <text class="weui-label mr48">联系人</text>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="联系人电话" />
+                <input bindinput="getName" class="weui-input" placeholder="联系人" />
             </view>
         </view>
         <view class="weui-cell">
@@ -36,7 +36,7 @@
                 <label class="weui-label mr44">手机号</label>
             </view>
             <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="请输入门牌号" />
+                <input bindinput="getPhone" class="weui-input" placeholder="请输入手机号" />
             </view>
         </view>
     </view>
