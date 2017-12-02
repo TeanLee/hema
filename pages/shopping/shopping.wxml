@@ -37,9 +37,9 @@
         </view>
         <view class="shopping__ft__bd">
             <text>合计：</text>
-            <text>￥49.00</text>
+            <text>￥{{sum}}</text>
         </view>
-        <view class="shopping__ft__ft">
+        <view class="shopping__ft__ft" bindtap="sumMoney">
             去结算
         </view>
     </view>
