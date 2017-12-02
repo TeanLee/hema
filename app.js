@@ -34,6 +34,6 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    cardList: []
   }
 })
