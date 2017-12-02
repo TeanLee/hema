@@ -45,6 +45,12 @@ Page({
           icon: 'success',
           duration: 2000
         })
+        setTimeout(function(){
+          wx.navigateTo({
+            url: "../chooseAddress/chooseAddress"
+          })
+        },1000);
+        
       }
     })
   },
