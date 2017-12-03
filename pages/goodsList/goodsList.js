@@ -23,7 +23,7 @@ Page({
     // console.log(this.data.goods);
     const good = this.data.goods[e.currentTarget.id]; // 根据index，判断用户点击了哪个商品加入购物车
     const cart = app.globalData.cardList; // 获取购物车列表
-    cart.push(good); // 用户选择夹肉购物车后，将该商品加入购物车列表
+    cart.push(good); // 用户选择商品加入购物车后，将该商品加入购物车列表
     // console.log(e.currentTarget.id);
     // console.log(cart);
   },
