@@ -2,7 +2,7 @@
 Page({
 
   /**
-   * 页面的初始数据
+   * 页面的初始数据，用户输入的收货地址、门牌号、姓名、联系电话
    */
   data: {
     address: '',
@@ -35,6 +35,7 @@ Page({
       phone: e.detail.value
     })
   },
+  // 用户点击保存后，对输入的数据进行存储，并反馈存储状态
   saveInfo: function() {
     wx.setStorage({
       key: "name",
