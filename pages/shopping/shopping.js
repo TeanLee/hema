@@ -15,10 +15,12 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
+      // 页面加载时就给购物车显示商品数量
       goodsList: app.globalData.cardList
     });
     this.sumMoney();
   },
+  // 增加商品数量
   addCount:function (e) {
     var that = this;
     console.log(e);
@@ -31,6 +33,7 @@ Page({
     })
     this.sumMoney();
   },
+  // 减少商品数量
   reduceCount: function(e) {
     var that = this;
     const goodId = e.currentTarget.id;
