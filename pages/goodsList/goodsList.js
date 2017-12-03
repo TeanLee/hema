@@ -10,7 +10,7 @@ Page({
   },
   onLoad: function (options) {
     wx.request({
-      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods",
+      url: "https://www.e加入asy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods",
       success: (res) => {
         console.log(res.data.data.goods);
         this.setData({
@@ -21,9 +21,9 @@ Page({
   },
   addInCart: function(e) {
     // console.log(this.data.goods);
-    const good = this.data.goods[e.currentTarget.id];
-    const cart = app.globalData.cardList;
-    cart.push(good);
+    const good = this.data.goods[e.currentTarget.id]; // 根据index，判断用户点击了哪个商品加入购物车
+    const cart = app.globalData.cardList; // 获取购物车列表
+    cart.push(good); // 用户选择夹肉购物车后，将该商品加入购物车列表
     // console.log(e.currentTarget.id);
     // console.log(cart);
   },
