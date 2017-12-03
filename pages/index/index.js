@@ -3,6 +3,7 @@
 const app = getApp()
 
 Page({
+  // activeIndex 是当前播放图片的下标
   data: {
     activeIndex: 0,
     scrollXList: []
@@ -14,12 +15,14 @@ Page({
       }
     })
   },
+  // 点击不同的小圆点切换不同的图片
   changeTag:  function(e){
     var type = e.target.dataset.index;
     this.setData({
       activeIndex: type
     });
   },
+  // 滑动切换图片，获取点击的下标，改变相应小圆点的状态
   swiperTab: function(e){
     var type = e.detail.current;
     this.setData({
