@@ -54,43 +54,43 @@
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image a1b1ca">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/wine.png" />
         </view>
         <p>中外名酒</p>
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image ffc793">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/water.png" />
         </view>
         <p>饮料/水</p>
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image c2d971">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/milk.png" />
         </view>
         <p>乳品冲饮</p>
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image f5cb8d">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/oil.png" />
         </view>
         <p>粮油副食</p>
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image c83d7f4">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/shampoo.png" />
         </view>
         <p>美妆个护</p>
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image ff9292">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/bottle.png" />
         </view>
         <p>母婴保健</p>
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image c2ec4c6">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/cleaner.png" />
         </view>
         <p>厨卫清洁</p>
       </li>
@@ -102,7 +102,7 @@
       </li>
       <li class="page__bd__sort left center">
         <view class="page__sort__image f3d24c">
-          <image src="../../assets/images/coffee.png" />
+          <image src="../../assets/images/wine.png" />
         </view>
         <p>礼品卡券</p>
       </li>
