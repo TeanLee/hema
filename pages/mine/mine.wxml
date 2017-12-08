@@ -2,7 +2,7 @@
     <view class="mine__hd center">
         <view class="mine__hd__containt">
             <view class="mine__hd__left left">
-                <image class="mine__hd__avatar left" src="../../assets/images/avatar.jpg" />
+                <image class="mine__hd__avatar left" src="https://github.com/TeanLee/hema/blob/master/assets/images/avatar.jpg" />
                 <view class="mine__hd__avatar-name left">棒棒糖20151012</view>
             </view>
             <view class="mine__hd__right left">
