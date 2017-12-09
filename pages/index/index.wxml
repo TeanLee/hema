@@ -46,13 +46,15 @@
     </view>
 
     <ul class="page__bd__sorts center">
-      <li class="page__bd__sort left center" bindtap="linkToList">
-        <view class="page__sort__image be8159">
-          <image src="../../assets/images/coffee.png" />
-        </view>
-        <p>休闲零食</p>
-      </li>
-      <li class="page__bd__sort left center">
+      <block wx:for="{{goodsSorts}}" wx:key="index" wx:for-index="index">
+        <li class="page__bd__sort left" id="{{index}}" bindtap="linkToList">
+          <view class="page__sort__image {{item.style}}">
+            <image src="{{item.imgSrc}}" />
+          </view>
+          <p>{{item.text}}</p>
+        </li>
+      </block>
+      <!-- <li class="page__bd__sort left center">
         <view class="page__sort__image a1b1ca">
           <image src="../../assets/images/wine.png" />
         </view>
@@ -105,7 +107,7 @@
           <image src="../../assets/images/wine.png" />
         </view>
         <p>礼品卡券</p>
-      </li>
+      </li> -->
     </ul>
 
     <view class="page__bd__scrollx-section">
