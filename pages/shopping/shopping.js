@@ -14,9 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const cardList = app.globalData.cardList;
+    cardList.map(item => {
+      item.type = "success";
+    });
+    console.log(cardList);
     this.setData({
       // 页面加载时就给购物车显示商品数量
-      goodsList: app.globalData.cardList
+      goodsList: cardList
     });
     this.sumMoney();
   },
