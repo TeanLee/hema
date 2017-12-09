@@ -6,8 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsList: [],
-    sum: 0
+    goodsList: [], // 商品展示的列表
+    sum: 0, // 总的钱数
+    allStatus: "circle" // 商品是否全选的标志，很巧妙的是，这个标志可以定义小圆圈是钩还是空心圆
   },
 
   /**
@@ -23,7 +24,10 @@ Page({
       // 页面加载时就给购物车显示商品数量
       goodsList: cardList
     });
+    // 页面加载完成前就开始计算总钱数用于显示
     this.sumMoney();
+    // 页面加载完成前就判断完商品是否全选，并指定全选的状态
+    this.allSelected();
   },
   // 增加商品数量
   addCount:function (e) {
@@ -72,6 +76,39 @@ Page({
     // console.log(count);
     this.setData({
       sum: count
+    })
+  },
+  selectGoods: function(e) {
+    // console.log(e.currentTarget.id);
+    // 根据index找到用户点击的是哪一件商品
+    const selected = this.data.goodsList[e.currentTarget.id];
+    // 改变选中商品的type属性  通过这种方式标记出哪些商品被选中了，以及改变最前面是钩还是圆圈
+    if(selected.type === "success") {
+      selected.type = "circle";
+    } else {
+      selected.type = "success";
+    }
+    this.setData({
+      goodsList: this.data.goodsList
+    })
+    this.allSelected();
+  },
+  // 用来判断是否全选
+  allSelected: function() {
+    const goods = this.data.goodsList;
+    console.log(goods);
+    var symbol = goods.some(good => {
+      return good.type === "circle"
+    })
+    console.log(symbol);
+    if(symbol) {
+      this.data.allStatus = "circle"
+    } else {
+      this.data.allStatus = "success"
+    }
+    console.log(this.data.allStatus);
+    this.setData({
+      allStatus: this.data.allStatus
     })
   },
 
