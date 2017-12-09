@@ -5,8 +5,9 @@ const app = getApp()
 Page({
   // activeIndex 是当前播放图片的下标
   data: {
-    activeIndex: 0,
-    scrollXList: []
+    activeIndex: 0,// 标记轮播到哪个图片
+    scrollXList: [],// 滚动的商品列表
+    goodsSorts: [] // 商品的十种分类   用于获取商品分类信息，显示在页面上
   },
   scan: function() {
     wx.scanCode({
@@ -34,7 +35,11 @@ Page({
       url: "../chooseAddress/chooseAddress"
     })
   },
-  linkToList: function() {
+  linkToList: function(e) {
+    // console.log(e.currentTarget.id);
+    // 将用户点击的分类保存在全局变量中，用于页面跳转后的商品显示
+    app.globalData.goodsSortsChoice = e.currentTarget.id;
+    // console.log(app.globalData.goodsSortsChoice);
     wx.navigateTo({
       url: "../goodsList/goodsList"
     })
@@ -47,11 +52,20 @@ Page({
     wx.request({
       url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getIndexScrollX",
       success: (res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.setData({
           scrollXList: res.data.data.goods
         })
-        console.log(res.data.data.goods);
+        // console.log(res.data.data.goods);
+      }
+    })
+    wx.request({
+      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/index_goodsSort",
+      success: (res) => {
+        console.log(res.data.data);
+        this.setData({
+          goodsSorts: res.data.data.sorts
+        })
       }
     })
   },
