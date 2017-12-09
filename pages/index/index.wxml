@@ -68,7 +68,7 @@
         </view>
       </view>
       <scroll-view scroll-x class="scrollx-section__content">
-        <block wx:for="{{scrollXList}}" wx:key="index">
+        <block wx:for="{{scrollXList}}" wx:key="index" wx:for-index="index">
           <view class="scrollx-section__content__item">
             <view class="scrollx-section__item__wrapper">
               <view class="view__wrapper__image">
@@ -88,7 +88,7 @@
                     <text>{{item.rightSecTitle}}</text>
                 </view>
                 <view class="wrapper__intro__price">
-                  <a>￥{{item.price}}</a><a>/{{item.unit}}</a><a>+</a>
+                  <a>￥{{item.price}}</a><a>/{{item.unit}}</a><a id="{{index}}" bindtap="addInCart">+</a>
                 </view>
               </view>
             </view>

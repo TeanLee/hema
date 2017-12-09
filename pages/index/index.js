@@ -44,6 +44,29 @@ Page({
       url: "../goodsList/goodsList"
     })
   },
+  addInCart: function(e) {
+    console.log(e);
+    const good = this.data.scrollXList[e.currentTarget.id]; // 根据index，判断用户点击了哪个商品加入购物车
+    const cart = app.globalData.cardList; // 获取购物车列表
+    // 设置一个标记，判断用户想加入购物车的商品是否已经存在购物车了
+    // some 是es6新增的方法，用于遍历整个数组，如果数组中存在一个及以上元素，就返回true
+    var flag = false;
+    flag = cart.some((item) => {
+      return item === good;
+    })
+    console.log(flag);
+    // 如果购物车中没有该元素，就将该商品加入购物车，否则就将该商品的购买数量加一
+    if(!flag) {
+      cart.push(good); // 用户选择商品加入购物车后，将该商品加入购物车列表
+      wx.showToast({
+        title: '商品已加入购物车',
+        icon: 'success',
+        duration: 2000
+      })
+    } else {
+      this.data.scrollXList[e.currentTarget.id].count ++;
+    }
+  },
   //事件处理函数
   bindViewTap: function() {
     
