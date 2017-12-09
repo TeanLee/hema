@@ -81,7 +81,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(this.data.goodsList);
+    this.setData({
+      // 页面加载时就给购物车显示商品数量
+      goodsList: app.globalData.cardList
+    });
+    this.sumMoney();
   },
 
   /**
