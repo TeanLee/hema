@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    cardList: []
+    cardList: [],
+    goodsSortsChoice: null // 用来标记首页商品分类  用户点击了哪个分类，进而显示不一样的商品列表
   }
 })
