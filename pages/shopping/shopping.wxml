@@ -32,7 +32,7 @@
     </view>
     <view class="shopping__ft">
         <view class="shopping__ft__hd">
-            <icon type="{{allStatus}}" color="#23a3ff"></icon>
+            <icon bindtap="selOrUnsel" type="{{allStatus}}" color="#23a3ff"></icon>
             全选
         </view>
         <view class="shopping__ft__bd">
