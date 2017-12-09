@@ -12,7 +12,7 @@
             <block wx:for="{{goodsList}}" wx:key="index" data-index="index">
                 <view class="weui-cell">
                     <view class="weui-cell__hd">
-                        <icon type="success" color="#23a3ff"></icon>
+                        <icon id="{{index}}" bindtap="selectGoods" type="{{item.type}}" color="#23a3ff"></icon>
                     </view>
                     <view class="weui-cell__bd">
                         <image src="{{item.image}}" />
@@ -32,7 +32,7 @@
     </view>
     <view class="shopping__ft">
         <view class="shopping__ft__hd">
-            <icon type="success" color="#23a3ff"></icon>
+            <icon type="{{allStatus}}" color="#23a3ff"></icon>
             全选
         </view>
         <view class="shopping__ft__bd">
