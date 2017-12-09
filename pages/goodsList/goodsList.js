@@ -10,11 +10,12 @@ Page({
   },
   onLoad: function (options) {
     wx.request({
-      url: "https://www.e加入asy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods",
+      // 获取所有分类的商品信息
+      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods",
       success: (res) => {
-        console.log(res.data.data.goods);
         this.setData({
-          goods: res.data.data.goods
+          // app.globalData.goodsSortsChoice从全局变量中获取上一步用户点击的分类是哪一个
+          goods: res.data.data[app.globalData.goodsSortsChoice]
         })
       }
     })
