@@ -138,6 +138,34 @@ Page({
       allStatus: this.data.allStatus
     })
   },
+  // 删除商品
+  delGoods: function() {
+    const goods = this.data.goodsList;
+    // 对购物车中所有的元素进行遍历，找出选中的元素，组成selGoods数组
+    const selGoods = goods.map(good => {
+      if(good.type === "success") {
+        return good;
+      }
+    })
+    wx.showModal({
+      title: "确定要删除所选商品？",
+      success: (res) => {
+        // 用户点击确定
+        if(res.confirm) {
+          // 对要删除的元素数组进行遍历，逐个用splice方法进行删除
+          selGoods.map(sel => {
+            goods.splice(sel);
+          })
+          // 删除成功以后从新设置页面的值
+          this.setData({
+            goodsList: this.data.goodsList
+          })
+        } else if (res.cancel) {
+
+        }
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
