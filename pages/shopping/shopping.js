@@ -111,6 +111,33 @@ Page({
       allStatus: this.data.allStatus
     })
   },
+  selOrUnsel: function() {
+    // console.log(this.data.allStatus);
+    // 获得全选按钮和商品列表
+    const status = this.data.allStatus;
+    const goods = this.data.goodsList;
+    // console.log(goods);
+    // 点击按钮后查看当前全选框的状态，对其进行取反的改变，并且对商品进行全选或反选
+    if(status === "success") {
+      this.data.allStatus = "circle";
+      // 遍历商品列表的每一项进行判断
+      goods.map(good => {
+        good.type = "circle";
+      })
+    } else {
+      this.data.allStatus = "success";
+      goods.map(good => {
+        good.type = "success";
+      })
+    }
+    // 将结果设置回页面上进行显示
+    this.setData({
+      goodsList: this.data.goodsList
+    })
+    this.setData({
+      allStatus: this.data.allStatus
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
