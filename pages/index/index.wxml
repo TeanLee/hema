@@ -72,7 +72,7 @@
           <view class="scrollx-section__content__item">
             <view class="scrollx-section__item__wrapper">
               <view class="view__wrapper__image">
-                  <image src="{{item.img}}" />
+                  <image src="{{item.image}}" />
               </view>
               <view class="view__wrapper__intro">
                 <view class="wrapper__intro__title">
