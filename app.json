@@ -1,8 +1,11 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/sort/sort",
+    "pages/goodsList/goodsList",
     "pages/shopping/shopping",
+    "pages/newAddr/newAddr",
+    "pages/chooseAddress/chooseAddress",
+    "pages/sort/sort",
     "pages/mine/mine",
     "pages/logs/logs"
   ],
