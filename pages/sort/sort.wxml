@@ -12,60 +12,14 @@
             <image src="https://gw.alicdn.com/tfs/TB1msQKc5qAXuNjy1XdXXaYcVXa-750-291.jpg_Q90.jpg" />
         </view>
         <ul class="sort__bd__ul">
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i4/725677994/TB1J.s0akfb_uJjSsrbXXb6bVXa_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>休闲零食</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i1/TB1PD03OFXXXXcbXXXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>中外名酒</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i3/725677994/TB1NB2bavBNTKJjy0FdXXcPpVXa_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>饮料/水</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i1/725677994/TB1U_WRedbJ8KJjy1zjXXaqapXa_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>乳品冲饮</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i4/725677994/TB16BGQbaLN8KJjSZFvXXXW8VXa_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>粮油调味</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i3/TB1RwAmRFXXXXXTXpXXXXXXXXXX_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>美妆个护</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i3/725677994/TB1dVSPcxTI8KJjSspiXXbM4FXa_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>母婴保健</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i4/725677994/TB1J.s0akfb_uJjSsrbXXb6bVXa_!!0-item_pic.jpg_160x160q90.jpg" />
-                </view>
-                <p>厨卫清洁</p>
-            </li>
-            <li class="sort__bd__li">
-                <view class="sort__li__image">
-                    <image src="//img.alicdn.com/bao/uploaded/i2/725677994/TB2ptK4fcrI8KJjy0FhXXbfnpXa_!!725677994.jpg_160x160q90.jpg" />
-                </view>
-                <p>日用百货</p>
-            </li>
+            <block wx:for="{{sortItems}}" wx:key="index" wx:for-index="index">
+                <li class="sort__bd__li" id="{{index}}" bindtap="linkToList">
+                    <view class="sort__li__image">
+                        <image src="{{item.imageSrc}}" />
+                    </view>
+                    <p>{{item.text}}</p>
+                </li>
+            </block>
         </ul>
     </view>
 </view>
