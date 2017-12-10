@@ -13,7 +13,7 @@
   </view>
 
   <view class="page__bd">
-    <swiper class="page__bd__scroll" current='{{activeIndex}}' bindchange='swiperTab'>
+    <swiper class="page__bd__scroll" current='{{activeIndex}}' bindchange='swiperTab' autoplay="true" interval="2000" duration="1000">
       <swiper-item>
         <image class="page__scroll__item" src="https://gw.alicdn.com/tfs/TB1AoIXeLDH8KJjy1XcXXcpdXXa-750-291.jpg_Q90.jpg"/>
       </swiper-item>
