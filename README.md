@@ -47,9 +47,13 @@
 
 <br>
 接下来就是实现方式的介绍。
+
 ## 功能实现详解
+
 ### 首页图片轮播和底部的滚动视图
+
 微信小程序自带组件 滑块视图容器swiper，能够实现滑块视图，每一个视图都放在一个swiper-item中。设置参数auto:play就可以自动播放导致swiper变化。
+
 ```
 <swiper class="page__bd__scroll" current='{{activeIndex}}' bindchange='swiperTab' autoplay="true" interval="2000" duration="1000">
   // interval是自动切换时间间隔，duration是滑动动画时长
@@ -71,6 +75,7 @@
   </swiper-item>
 </swiper>
 ```
+
 横向滚动视图的实现：
 
 微信自带组件 可滚动视图区域scroll-view，通过设置属性名scroll-x或者scroll-y可以实现视图的横向滚动或者纵向滚动。
