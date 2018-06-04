@@ -17,8 +17,8 @@
     color: #6b6b6b;
 }
 .sort__hd__right, .sort__hd__right image {
-    width: 40rpx;
-    height: 40rpx;
+    width: 50rpx;
+    height: 50rpx;
     margin-right: 20rpx;
     margin-top: 16rpx;
     float: right;

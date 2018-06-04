@@ -3,7 +3,7 @@
         <view class="sort__title">
             <a class="sort__title__text">分类</a>
             <view class="sort__hd__right right">
-                <image src="../../assets/icons/sort-search.png" />
+                <image bindtap="toSort" src="../../assets/icons/shopping-sel.png" />
             </view>
         </view>
     </view>
