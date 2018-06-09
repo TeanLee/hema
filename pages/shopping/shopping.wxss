@@ -38,7 +38,6 @@
 }
 .weui-cell__ft text {
     display: block;
-    padding-left: 20rpx;
 }
 .weui-cell__ft .proIntr {
     font-size: 26rpx;
