@@ -19,10 +19,12 @@ Page({
     cardList.map(item => {
       item.type = "success";
     });
-    console.log(cardList);
     this.setData({
       // 页面加载时就给购物车显示商品数量
       goodsList: cardList
+    });
+    this.data.goodsList.map(item => {
+      item.type = "success";
     });
     // 页面加载完成前就开始计算总钱数用于显示
     this.sumMoney();
@@ -32,11 +34,8 @@ Page({
   // 增加商品数量
   addCount:function (e) {
     var that = this;
-    console.log(e);
     const goodId = e.currentTarget.id;
-    console.log(that.data.goodsList[goodId]);
     that.data.goodsList[goodId].count++;
-    console.log(that.data.goodsList[goodId]);
     this.setData({
       goodsList: that.data.goodsList
     })
@@ -46,7 +45,6 @@ Page({
   reduceCount: function(e) {
     var that = this;
     const goodId = e.currentTarget.id;
-    // console.log(that.data.goodsList[goodId]);
     if(that.data.goodsList[goodId].count <= 1) {
       that.data.goodsList[goodId].count = 1;
       wx.showModal({
@@ -57,7 +55,6 @@ Page({
     } else {
       that.data.goodsList[goodId].count--;
     }
-    // console.log(that.data.goodsList[goodId]);
     this.setData({
       goodsList: that.data.goodsList
     })
@@ -67,19 +64,14 @@ Page({
   sumMoney: function() {
     var count = 0;
     const goods = this.data.goodsList;
-    console.log(goods);
     for(let i = 0; i < goods.length; i++) {
-      // console.log(goods[i].count);
-      // console.log(goods[i].price);
       count += goods[i].count*goods[i].price;
     }
-    // console.log(count);
     this.setData({
       sum: count
     })
   },
   selectGoods: function(e) {
-    // console.log(e.currentTarget.id);
     // 根据index找到用户点击的是哪一件商品
     const selected = this.data.goodsList[e.currentTarget.id];
     // 改变选中商品的type属性  通过这种方式标记出哪些商品被选中了，以及改变最前面是钩还是圆圈
@@ -96,27 +88,22 @@ Page({
   // 用来判断是否全选
   allSelected: function() {
     const goods = this.data.goodsList;
-    console.log(goods);
     var symbol = goods.some(good => {
       return good.type === "circle"
     })
-    console.log(symbol);
     if(symbol) {
       this.data.allStatus = "circle"
     } else {
       this.data.allStatus = "success"
     }
-    console.log(this.data.allStatus);
     this.setData({
       allStatus: this.data.allStatus
     })
   },
   selOrUnsel: function() {
-    // console.log(this.data.allStatus);
     // 获得全选按钮和商品列表
     const status = this.data.allStatus;
     const goods = this.data.goodsList;
-    // console.log(goods);
     // 点击按钮后查看当前全选框的状态，对其进行取反的改变，并且对商品进行全选或反选
     if(status === "success") {
       this.data.allStatus = "circle";
@@ -137,17 +124,13 @@ Page({
     this.setData({
       allStatus: this.data.allStatus
     })
+    this.sumMoney();
   },
   // 删除商品
   delGoods: function() {
     const goods = this.data.goodsList;
     const cart = app.globalData.cardList; // 获取购物车列表
-    // 对购物车中所有的元素进行遍历，找出选中的元素，组成selGoods数组
-    const selGoods = goods.map(good => {
-      if(good.type === "success") {
-        return good;
-      }
-    })
+    const selGoods = goods.filter(good => good.type === "success");
     wx.showModal({
       title: "确定要删除所选商品？",
       success: (res) => {
@@ -155,8 +138,9 @@ Page({
         if(res.confirm) {
           // 对要删除的元素数组进行遍历，逐个用splice方法进行删除
           selGoods.map(sel => {
-            goods.splice(sel);
-            cart.splice(sel);
+            const index = goods.indexOf(sel);
+            goods.splice(index, 1);
+            cart.splice(index, 1);
           })
           // 删除成功以后从新设置页面的值
           this.setData({
@@ -167,6 +151,7 @@ Page({
         }
       }
     })
+    this.sumMoney();
   },
 
   /**
@@ -185,6 +170,9 @@ Page({
       goodsList: app.globalData.cardList
     });
     this.sumMoney();
+    this.data.goodsList.map(item => {
+      item.type = "success";
+    });
   },
 
   /**
