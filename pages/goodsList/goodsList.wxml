@@ -4,7 +4,7 @@
             <view class="goodsList__title">
                 <a class="goodsList__title__text">分类</a>
                 <view class="goodsList__hd__right right">
-                    <image src="../../assets/icons/sort-search.png" />
+                    <image bindtap="toSort" src="../../assets/icons/shopping-sel.png" />
                 </view>
             </view>
         </view>

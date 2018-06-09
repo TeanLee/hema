@@ -20,6 +20,11 @@ Page({
       }
     })
   },
+  toSort: function() {
+    wx.switchTab({
+      url: "../shopping/shopping"
+    })
+  },
   addInCart: function(e) {
     // console.log(this.data.goods);
     const good = this.data.goods[e.currentTarget.id]; // 根据index，判断用户点击了哪个商品加入购物车

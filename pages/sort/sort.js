@@ -17,12 +17,6 @@ Page({
       url: "../goodsList/goodsList"
     })
   },
-  toSort: function() {
-    console.log('shopping');
-    wx.switchTab({
-      url: "../shopping/shopping"
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载

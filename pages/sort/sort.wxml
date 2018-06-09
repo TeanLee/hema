@@ -2,9 +2,6 @@
     <view class="sort__hd">
         <view class="sort__title">
             <a class="sort__title__text">分类</a>
-            <view class="sort__hd__right right">
-                <image bindtap="toSort" src="../../assets/icons/shopping-sel.png" />
-            </view>
         </view>
     </view>
     <view class="sort__bd">
