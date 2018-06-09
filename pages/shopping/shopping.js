@@ -141,6 +141,7 @@ Page({
   // 删除商品
   delGoods: function() {
     const goods = this.data.goodsList;
+    const cart = app.globalData.cardList; // 获取购物车列表
     // 对购物车中所有的元素进行遍历，找出选中的元素，组成selGoods数组
     const selGoods = goods.map(good => {
       if(good.type === "success") {
@@ -155,6 +156,7 @@ Page({
           // 对要删除的元素数组进行遍历，逐个用splice方法进行删除
           selGoods.map(sel => {
             goods.splice(sel);
+            cart.splice(sel);
           })
           // 删除成功以后从新设置页面的值
           this.setData({
