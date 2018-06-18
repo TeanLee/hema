@@ -65,10 +65,12 @@ Page({
     var count = 0;
     const goods = this.data.goodsList;
     for(let i = 0; i < goods.length; i++) {
-      count += goods[i].count*goods[i].price;
+      if(goods[i].type === "success") {
+        count += goods[i].count*goods[i].price;
+      }
     }
     this.setData({
-      sum: count
+      sum: count.toFixed(2)
     })
   },
   selectGoods: function(e) {
@@ -84,6 +86,7 @@ Page({
       goodsList: this.data.goodsList
     })
     this.allSelected();
+    this.sumMoney();
   },
   // 用来判断是否全选
   allSelected: function() {
@@ -142,6 +145,7 @@ Page({
             goods.splice(index, 1);
             cart.splice(index, 1);
           })
+          this.sumMoney();
           // 删除成功以后从新设置页面的值
           this.setData({
             goodsList: this.data.goodsList
@@ -163,7 +167,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.setData({
+      // 页面加载时就给购物车显示商品数量
+      goodsList: app.globalData.cardList
+    });
+    this.sumMoney();
+    this.data.goodsList.map(item => {
+      item.type = "success";
+    });
   },
 
   /**
@@ -178,20 +189,35 @@ Page({
     this.data.goodsList.map(item => {
       item.type = "success";
     });
+    this.onLoad();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    this.setData({
+      // 页面加载时就给购物车显示商品数量
+      goodsList: app.globalData.cardList
+    });
+    this.sumMoney();
+    this.data.goodsList.map(item => {
+      item.type = "success";
+    });
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    this.setData({
+      // 页面加载时就给购物车显示商品数量
+      goodsList: app.globalData.cardList
+    });
+    this.sumMoney();
+    this.data.goodsList.map(item => {
+      item.type = "success";
+    });
   },
 
   /**
