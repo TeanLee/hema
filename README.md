@@ -569,9 +569,3 @@ scan: function() {
 最后奉上GitHub源码地址：https://github.com/TeanLee/hema
 
 如果觉得还不错的话，请给个start鼓励一下哟~
-
-本小程序我也会不断更新，欢迎批评、指导、交流：
-
-WeChat：ltt598625763
-
-Email：ltt598625763@qq.com
