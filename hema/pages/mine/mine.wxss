@@ -1,0 +1,90 @@
+.mine__hd {
+    width: 100%;
+    height: 252rpx;
+    background-color: #23a3ff;
+    color: white;
+    font-size: 28rpx;
+}
+.mine__hd__containt {
+    width: 690rpx;
+    height: 124rpx;
+    line-height: 124rpx;
+    margin-left: 30rpx;
+}
+.mine__hd__left {
+    width: 486rpx;
+    height: 124rpx;
+}
+.mine__hd__left .image, .mine__hd__left image {
+    width: 124rpx;
+    height: 124rpx;
+}
+.mine__hd__left image {
+    border-radius: 62rpx;
+    margin-right: 28rpx;
+}
+.mine__hd__right image {
+    width: 84rpx;
+    height: 84rpx;
+    margin-top: 14rpx;
+    margin-right: 18rpx;
+}
+.mine__bd .weui-cell__hd image {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    margin-right: 26rpx;
+}
+.mine__bd .weui-cell__ft:after {
+    content: " ";
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #C8C8CD;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: relative;
+    top: -4rpx;
+    position: absolute;
+    top: 50%;
+    margin-top: -8rpx;
+    right: 26rpx;
+}
+.mine__bd .weui-cell .weui-cell__ft {
+    font-size: 28rpx;
+    margin-right: 26rpx;
+}
+.mine__bd .mine__bd__ul ul {
+    background-color: white;
+    width: 100%;
+    height: 90rpx;
+    display: inline-block;
+    padding-left: 10rpx;
+}
+.mine__bd .mine__bd__ul ul li {
+    display: inline-block;
+    height: 88rpx;
+    float: left;
+    /* #ececec */
+    border-right: 1px solid #ececec;
+    font-size: 26rpx;
+    padding: 20rpx 30rpx;
+}
+.mine__bd .mine__bd__ul ul li.last {
+    border-right: none;
+}
+.mine__bd .mine__bd__ul ul li image {
+    width: 50rpx;
+    height: 46rpx;
+}
+.weui-cell:before {
+    border-top: none;
+}    
+.weui-cells:after {
+    border-bottom: none;
+}   
+.weui-cells:after {
+    border-top: none;
+} 

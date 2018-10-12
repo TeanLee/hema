@@ -1,0 +1,18 @@
+<view class="choose-addr__hd">
+    <text class="choose-addr__title">选择收货地址</text>
+    <text class="choose-addr__add right" bindtap="addNewAddr">新增地址</text>
+</view>
+<view class="choose-addr__bd">
+    <view class="choose-addr__bd__input">
+        <input class="choose-addr__input__content" placeholder="请输入收货地址" />
+    </view>
+
+    <view class="choose-addr__bd__addr">
+        <text>我的收货地址</text>
+        <view class="choose-addr__bd__session">
+            <text>{{name}} {{phone}}</text>
+            <text>{{address}}{{num}}</text>
+        </view>
+    </view>
+
+</view>

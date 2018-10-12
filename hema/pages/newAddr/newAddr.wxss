@@ -1,0 +1,36 @@
+.newAddr__hd {
+    width: 100%;
+    height: 88rpx;
+    text-align: center;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.newAddr__title {
+    font-size: 34rpx;
+    line-height: 88rpx;
+}
+.left {
+    margin-left: 34rpx;
+}
+.newAddr__add {
+    font-size: 30rpx;
+    color: #23a3ff;
+    display: block;
+    line-height: 88rpx;
+    margin-right: 34rpx;
+}
+.gray-input .weui-cell__hd text {
+    color: #8d8d8d;
+}
+.mr60 {
+    margin-right: 60rpx;
+}
+.mr94 {
+    margin-right: 94rpx;
+}
+.mr48 {
+    margin-right: 48rpx;
+}
+.mr44 {
+    margin-right: 44rpx;
+}

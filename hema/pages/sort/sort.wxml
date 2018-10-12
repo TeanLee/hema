@@ -1,0 +1,22 @@
+<view class="sort">
+    <view class="sort__hd">
+        <view class="sort__title">
+            <a class="sort__title__text">分类</a>
+        </view>
+    </view>
+    <view class="sort__bd">
+        <view class="sort__bd__image">
+            <image src="https://gw.alicdn.com/tfs/TB1msQKc5qAXuNjy1XdXXaYcVXa-750-291.jpg_Q90.jpg" />
+        </view>
+        <ul class="sort__bd__ul">
+            <block wx:for="{{sortItems}}" wx:key="index" wx:for-index="index">
+                <li class="sort__bd__li" id="{{index}}" bindtap="linkToList">
+                    <view class="sort__li__image">
+                        <image src="{{item.imageSrc}}" />
+                    </view>
+                    <p>{{item.text}}</p>
+                </li>
+            </block>
+        </ul>
+    </view>
+</view>

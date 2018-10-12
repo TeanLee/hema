@@ -1,0 +1,103 @@
+<view class="container">
+  <view class="page__hd">
+    <view class="page__hd__input-left left">
+      <image src="../../assets/icons/position.png" bindtap="chooseAddr" />
+    </view>
+    <view class="page__hd-input left center">
+      <image src="../../assets/icons/search.png" />
+      奇异果
+    </view>
+    <view class="page__hd__input-right left">
+      <image bindtap="scan" src="../../assets/icons/scan.png" />
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <swiper class="page__bd__scroll" current='{{activeIndex}}' bindchange='swiperTab' autoplay="true" interval="2000" duration="1000">
+      <swiper-item>
+        <image class="page__scroll__item" src="https://gw.alicdn.com/tfs/TB1AoIXeLDH8KJjy1XcXXcpdXXa-750-291.jpg_Q90.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image class="page__scroll__item" src="https://img.alicdn.com/imgextra/i1/771510470/TB21SB0fIbI8KJjy1zdXXbe1VXa-771510470.jpg_Q90.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image class="page__scroll__item" src="https://img.alicdn.com/imgextra/i2/745949152/TB2ATrSexPI8KJjSspfXXcCFXXa_!!745949152.jpg_Q90.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image class="page__scroll__item" src="https://img.alicdn.com/tfs/TB1OYB8elfH8KJjy1XbXXbLdXXa-750-291.jpg_Q90.jpg"/>
+      </swiper-item>
+      <swiper-item>
+        <image class="page__scroll__item" src="https://img.alicdn.com/imgextra/i2/745949152/TB2ATrSexPI8KJjSspfXXcCFXXa_!!745949152.jpg_Q90.jpg"/>
+      </swiper-item>
+    </swiper>
+
+    <ul class="page__scroll__btns">
+      <li class="page__scroll__btn {{activeIndex==0?'active':''}}" bindtap="changeTag" data-index="0"></li>
+      <li class="page__scroll__btn {{activeIndex==1?'active':''}}" bindtap="changeTag" data-index="1"></li>
+      <li class="page__scroll__btn {{activeIndex==2?'active':''}}" bindtap="changeTag" data-index="2"></li>
+      <li class="page__scroll__btn {{activeIndex==3?'active':''}}" bindtap="changeTag" data-index="3"></li>
+      <li class="page__scroll__btn {{activeIndex==4?'active':''}}" bindtap="changeTag" data-index="4"></li>
+    </ul>
+
+    <view class="page__bd__notice">
+      <image src="../../assets/icons/trumpet.png" />
+      <a class="page__notice__content">盒马云超市来啦！0门槛包邮！上海外环内可包邮到家！</a>
+      <a class="page__notice__right">1/1</a>
+    </view>
+
+    <ul class="page__bd__sorts center">
+      <block wx:for="{{goodsSorts}}" wx:key="index" wx:for-index="index">
+        <li class="page__bd__sort left" id="{{index}}" bindtap="linkToList">
+          <view class="page__sort__image {{item.style}}">
+            <image src="{{item.imgSrc}}" />
+          </view>
+          <p>{{item.text}}</p>
+        </li>
+      </block>
+    </ul>
+
+    <view class="page__bd__scrollx-section">
+      <view class="scrollx-section__title">
+        <view class="scrollx-section__title__left left">
+          <image src="../../assets/icons/crown.png" class="left" />
+          <p class="left">今日王牌大赏</p>
+        </view>
+        <view class="scrollx-section__title__right right">
+          <p class="left">更多</p>
+          <a class="left"></a>
+        </view>
+      </view>
+      <scroll-view scroll-x class="scrollx-section__content">
+        <block wx:for="{{scrollXList}}" wx:key="index" wx:for-index="index">
+          <view class="scrollx-section__content__item">
+            <view class="scrollx-section__item__wrapper">
+              <view class="view__wrapper__image">
+                  <image src="{{item.image}}" />
+              </view>
+              <view class="view__wrapper__intro">
+                <view class="wrapper__intro__title">
+                  <text>{{item.name}}</text>
+                  <text>{{item.secName}}</text>
+                </view>
+                <view class="wrapper__intro__content left">
+                  <text>{{item.leftTitle}}</text>
+                  <text>{{item.leftSecTitle}}</text>
+                </view>
+                <view class="wrapper__intro__content right">
+                    <text>{{item.rightTitle}}</text>
+                    <text>{{item.rightSecTitle}}</text>
+                </view>
+                <view class="wrapper__intro__price">
+                  <a>￥{{item.price}}</a><a>/{{item.unit}}</a><a id="{{index}}" bindtap="addInCart">+</a>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+  </view>
+
+  <view class="page__ft"></view>
+</view>

@@ -1,0 +1,46 @@
+<view class="shopping">
+    <view class="shopping__hd">
+        <view class="shopping__hd__content">
+            <view class="shopping__title">
+                购物车
+                <a class="shopping__title__delete right" bindtap="delGoods">删除</a>
+            </view>
+        </view>
+    </view>
+    <view class="shopping__bd">
+        <view class="weui-cells">
+            <block wx:for="{{goodsList}}" wx:key="index" data-index="index">
+                <view class="weui-cell">
+                    <view class="weui-cell__hd">
+                        <icon id="{{index}}" bindtap="selectGoods" type="{{item.type}}" color="#23a3ff"></icon>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <image src="{{item.image}}" />
+                    </view>
+                    <view class="weui-cell__ft right">
+                        <text class="proIntr left">{{item.name}}</text>
+                        <text class="price left">￥{{item.price}}/{{item.unit}}</text>
+                        <view class="count">
+                            <text class="reduce left" bindtap="reduceCount" id="{{index}}">-</text>
+                            <text class="number left">{{item.count}}</text>
+                            <text class="add left" bindtap="addCount" id="{{index}}">+</text>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="shopping__ft">
+        <view class="shopping__ft__hd">
+            <icon bindtap="selOrUnsel" type="{{allStatus}}" color="#23a3ff"></icon>
+            全选
+        </view>
+        <view class="shopping__ft__bd">
+            <text>合计：</text>
+            <text>￥{{sum}}</text>
+        </view>
+        <view class="shopping__ft__ft" bindtap="toOrder">
+            去结算
+        </view>
+    </view>
+</view>

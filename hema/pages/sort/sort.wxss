@@ -1,0 +1,62 @@
+.sort {
+    width: 100%;
+    height: 100%;
+}
+.sort__hd {
+    width: 100%;
+    height: 104rpx;
+    background-color: #ffffff;
+    text-align: center;
+}
+.sort__title {
+    font-size: 37rpx;
+    line-height: 104rpx;
+}
+.sort__title__text {
+    margin-left: 50rpx;
+    color: #6b6b6b;
+}
+.sort__hd__right, .sort__hd__right image {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 20rpx;
+    margin-top: 16rpx;
+    float: right;
+}
+.sort__bd {
+    width: 100%;
+    height: 100%;
+}
+.sort__bd .sort__bd__image, .sort__bd .sort__bd__image image {
+    width: 100%;
+    height: 242rpx;
+}
+.sort__bd ul {
+    width: 610rpx;
+    height: 600rpx;
+    /* border: 1px solid red; */
+    display: block;
+    margin-left: 70rpx;
+    margin-top: 50rpx;
+    text-align: center;
+}
+.sort .sort__bd .sort__bd__ul li {
+    display: block;
+    width: 130rpx;
+    height: 165rpx;
+    /* outline: 1px solid black; */
+    float: left;
+    margin-right: 110rpx;
+    margin-bottom: 50rpx;
+}
+.sort .sort__bd .sort__bd__ul li:nth-child(3n) {
+    margin-right: 0;
+}
+.sort__bd .sort__bd__ul .sort__li__image, .sort__bd .sort__bd__ul .sort__li__image image {
+    width: 130rpx;
+    height: 110rpx;
+}
+.sort__bd .sort__bd__ul p {
+    font-size: 30rpx;
+    color: #4e4e4e;
+}

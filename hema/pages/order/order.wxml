@@ -1,0 +1,27 @@
+<view class="shopping">
+    <view class="shopping__hd">
+        <view class="shopping__hd__content">
+            <view class="shopping__title">
+                订单列表
+                <view class="goodsList__hd__right right">
+                    <image bindtap="toSort" src="../../assets/icons/shopping-sel.png" />
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="shopping__bd">
+        <view class="weui-cells">
+            <block wx:for="{{goodsList}}" wx:key="index" data-index="index">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">
+                        <image src="{{item.image}}" />
+                    </view>
+                    <view class="weui-cell__ft right">
+                        <text class="proIntr left">{{item.name}}</text>
+                        <text class="proIntr left">数量: {{item.count}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

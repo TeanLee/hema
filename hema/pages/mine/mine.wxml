@@ -1,0 +1,166 @@
+<view class="container">
+    <view class="mine__hd center">
+        <view class="mine__hd__containt">
+            <view class="mine__hd__left left">
+                <image class="mine__hd__avatar left" src="../../assets/images/avatar.jpg" />
+                <view class="mine__hd__avatar-name left">棒棒糖20151012</view>
+            </view>
+            <view class="mine__hd__right left">
+                <image src="../../assets/icons/scan.png" />
+                <image src="../../assets/icons/payment.png" />
+            </view>
+        </view>
+    </view>
+    
+    <view class="mine__bd">
+        <view class="mine__bd__ul">
+            <ul>
+                <li>
+                    <view class="image center">
+                        <image src="../../assets/icons/wallet.png" />
+                    </view>
+                    <p>待付款</p>
+                </li>
+                <li>
+                    <view class="image center">
+                        <image src="../../assets/icons/package.png" />
+                    </view>
+                    <p>待配送</p>
+                </li>
+                <li>
+                    <view class="image center">
+                        <image src="../../assets/icons/delivery.png" />
+                    </view>
+                    <p>配送中</p>
+                </li>
+                <li>
+                    <view class="image center">
+                        <image src="../../assets/icons/hand.png" />
+                    </view>
+                    <p>待评价</p>
+                </li>
+                <li class="last">
+                    <view class="image center">
+                        <image src="../../assets/icons/order.png" />
+                    </view>
+                    <p>全部订单</p>
+                </li>
+            </ul>
+        </view>
+
+        <view class="weui-cells">
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/discount.png" style="width:60rpx;height:60rpx; margin-left:-10rpx;" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">优惠券</span>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/welfare.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">福利社</span>
+                    <span class="weui-badge" style="margin-left:5px;">NEW</span>
+                </view>
+                <view class="weui-cell__ft">养盒马，能赚钱</view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/friends.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">邀请好友</span>
+                    <span class="weui-badge" style="margin-left:5px;">NEW</span>
+                </view>
+                <view class="weui-cell__ft">得6元，可叠加</view>
+            </view>
+        </view>
+    
+        <view class="weui-cells">
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/credit.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">银行卡活动</span>
+                </view>
+                <view class="weui-cell__ft">浦发满50减10</view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/card.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">电子券</span>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/present.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">礼品卡</span>
+                </view>
+                <view class="weui-cell__ft">电子卡赠亲友</view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/exchange.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">兑换优惠码</span>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/message.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">盒马小蜜</span>
+                </view>
+                <view class="weui-cell__ft">客官，吐槽请点</view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/evaluate.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">评价</span>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+        </view>
+
+        <view class="weui-cells">
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/store.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">盒马门店</span>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="weui-cell weui-cell_assess">
+                <view class="weui-cell__hd">
+                    <image src="../../assets/icons/setting.png" />
+                </view>
+                <view class="weui-cell__bd">
+                    <span style="vertical-align: middle">设置</span>
+                </view>
+                <view class="weui-cell__ft"></view>
+            </view>
+        </view>
+
+    </view>
+
+    
+
+    <view class="mine__ft"></view>
+</view>
