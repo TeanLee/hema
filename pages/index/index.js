@@ -7,7 +7,7 @@ Page({
   data: {
     activeIndex: 0,// 标记轮播到哪个图片
     scrollXList: [],// 滚动的商品列表
-    goodsSorts: [] // 商品的十种分类   用于获取商品分类信息，显示在页面上
+    goodsSorts: [], // 商品的十种分类   用于获取商品分类信息，显示在页面上
   },
   scan: function() {
     wx.scanCode({
@@ -82,14 +82,17 @@ Page({
         // console.log(res.data.data.goods);
       }
     })
-    wx.request({
-      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/index_goodsSort",
-      success: (res) => {
-        console.log(res.data.data);
-        this.setData({
-          goodsSorts: res.data.data.sorts
-        })
-      }
+    // wx.request({
+    //   url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/index_goodsSort",
+    //   success: (res) => {
+    //     console.log(res.data.data);
+    //     this.setData({
+    //       goodsSorts: res.data.data.sorts
+    //     })
+    //   }
+    // })
+    this.setData({
+      goodsSorts: ["https://gtms03.alicdn.com/tps/i3/TB1gXd1JXXXXXapXpXXvKyzTVXX-520-280.jpg"]
     })
   },
   getUserInfo: function(e) {

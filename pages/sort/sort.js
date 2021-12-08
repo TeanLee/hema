@@ -26,6 +26,7 @@ Page({
       url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/sortItems",
       success: (res) => {
         console.log(res.data.data);
+        res.data.data.sorts = ["https://gtms03.alicdn.com/tps/i3/TB1gXd1JXXXXXapXpXXvKyzTVXX-520-280.jpg"]
         this.setData({
           sortItems: res.data.data.sorts
         })

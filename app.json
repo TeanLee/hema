@@ -20,7 +20,7 @@
     "color": "#a1a1a1",
     "selectedColor": "#2af8ff",
     "backgroundColor": "#ffffff",
-    "borderStyle": "#e0e0e0",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -47,5 +47,11 @@
         "text": "我的"
       }
     ]
-  }
+  },
+  "usingComponents": {
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "sitemapLocation": "sitemap.json"
 }

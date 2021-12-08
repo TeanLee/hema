@@ -95,7 +95,7 @@
   height: 320rpx;
   /* border: 1px solid red; */
   display: block;
-  margin-left: 24rpx;
+  padding: 24rpx;
 }
 .page__bd ul.page__bd__sorts li.page__bd__sort {
   width: 100rpx;

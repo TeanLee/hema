@@ -46,14 +46,15 @@
     </view>
 
     <ul class="page__bd__sorts center">
-      <block wx:for="{{goodsSorts}}" wx:key="index" wx:for-index="index">
-        <li class="page__bd__sort left" id="{{index}}" bindtap="linkToList">
-          <view class="page__sort__image {{item.style}}">
-            <image src="{{item.imgSrc}}" />
-          </view>
-          <p>{{item.text}}</p>
-        </li>
-      </block>
+      <van-grid column-num="5">
+        <van-grid-item use-slot wx:for="{{ 10 }}" wx:for-item="index">
+          <image
+            style="width: 100%; height: 40px;"
+            src="../../assets/icons/trumpet.png"
+          />
+          <span style="font-size: 24rpx;">时令水果</span>
+        </van-grid-item>
+      </van-grid>
     </ul>
 
     <view class="page__bd__scrollx-section">
