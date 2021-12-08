@@ -96,6 +96,7 @@
   /* border: 1px solid red; */
   display: block;
   padding: 24rpx;
+  margin-top: -70rpx;
 }
 .page__bd ul.page__bd__sorts li.page__bd__sort {
   width: 100rpx;
@@ -158,7 +159,7 @@
 .page__bd__scrollx-section .scrollx-section__title {
   width: 682rpx;
   height: 70rpx;
-  margin-top: 70rpx;
+  margin-top: 100rpx;
   /* outline: 1px solid red; */
   margin-left: 38rpx;
   line-height: 70rpx;
@@ -205,7 +206,7 @@
 }
 .scrollx-section__content__item {
   width: 626rpx;
-  height: 304rpx;
+  height: 240rpx;
   /* outline: 1px solid red; */
   display: inline-block;
   margin-left: 20rpx;
@@ -242,6 +243,7 @@
   overflow: hidden;
 }
 .wrapper__intro__title {
+  padding-top: 30rpx;
   width: 318rpx;
 }
 .wrapper__intro__title text {
@@ -257,7 +259,7 @@
   display: block;
 }
 .wrapper__intro__title text:nth-child(2n) {
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: #a9a9a9;
   font-weight: blod;
 }
@@ -279,7 +281,7 @@
   width: 100%;
   display: block;
   overflow: hidden;
-  margin-top: 80rpx;
+  margin-top: 40rpx;
 }
 .wrapper__intro__price a {
   color: #ff7c2a;

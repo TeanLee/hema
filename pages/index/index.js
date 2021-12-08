@@ -8,6 +8,74 @@ Page({
     activeIndex: 0,// 标记轮播到哪个图片
     scrollXList: [],// 滚动的商品列表
     goodsSorts: [], // 商品的十种分类   用于获取商品分类信息，显示在页面上
+    icons: [
+      {
+        "icon": "icon-shuiguo",
+        "color": "#d81e06",
+        "name": "时令水果"
+      },
+      {
+        "icon": "icon-shengxian-xianshucai",
+        "color": "#339933",
+        "name": "新鲜蔬菜"
+      },
+      {
+        "icon": "icon-haixian",
+        "color": "#1296db",
+        "name": "海鲜水产"
+      },
+      {
+        "icon": "icon-rou1",
+        "color": "#CC3333",
+        "name": "肉禽蛋品"
+      },
+      {
+        "icon": "icon-shenghuobaihuo",
+        "color": "#006633",
+        "name": "生活百货"
+      },
+      {
+        "icon": "icon-gehumeizhuang",
+        "color": "#FF6600",
+        "name": "美妆个护"
+      },
+      {
+        "icon": "icon-muying",
+        "color": "#99CCCC",
+        "name": "母婴百货"
+      },
+      {
+        "icon": "icon-baojian",
+        "color": "#66CC99",
+        "name": "滋补保健"
+      },
+      {
+        "icon": "icon-jiu",
+        "color": "#993333",
+        "name": "中外名酒"
+      },
+      {
+        "icon": "icon-caizhuang",
+        "color": "#FF9900",
+        "name": "彩妆时尚"
+      }
+    ],
+    scrollXList: [
+      {
+        "banner": "https://img.alicdn.com/imgextra/i1/6000000002256/O1CN01SxJ6mn1SXI9zLW32K_!!6000000002256-0-at.jpg_430x430q90.jpg",
+        "title": "国联水产翡翠生虾仁小号156-198只净重1000g冷冻生鲜海鲜火锅食材",
+        "price": "222",
+        "subTitle": "ltscnamscnamscnam",
+        "unit": "袋"
+      },
+      {
+        "banner": "https://img.alicdn.com/imgextra/i1/6000000002256/O1CN01SxJ6mn1SXI9zLW32K_!!6000000002256-0-at.jpg_430x430q90.jpg",
+        "title": "国联水产翡翠生虾仁小号156-198只净重1000g冷冻生鲜海鲜火锅食材",
+        "price": "222",
+        "subTitle": "ltscnamscnamscnam",
+        "unit": "袋",
+      }
+    ]
   },
   scan: function() {
     wx.scanCode({
@@ -76,9 +144,9 @@ Page({
       url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getIndexScrollX",
       success: (res) => {
         // console.log(res.data);
-        this.setData({
-          scrollXList: res.data.data.goods
-        })
+        // this.setData({
+        //   scrollXList: res.data.data.goods
+        // })
         // console.log(res.data.data.goods);
       }
     })

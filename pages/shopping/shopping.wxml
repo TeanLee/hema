@@ -15,10 +15,10 @@
                         <icon id="{{index}}" bindtap="selectGoods" type="{{item.type}}" color="#23a3ff"></icon>
                     </view>
                     <view class="weui-cell__bd">
-                        <image src="{{item.image}}" />
+                        <image src="{{item.banner}}" />
                     </view>
                     <view class="weui-cell__ft right">
-                        <text class="proIntr left">{{item.name}}</text>
+                        <text class="proIntr left">{{item.title}}</text>
                         <text class="price left">￥{{item.price}}/{{item.unit}}</text>
                         <view class="count">
                             <text class="reduce left" bindtap="reduceCount" id="{{index}}">-</text>
