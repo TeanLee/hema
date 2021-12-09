@@ -39,12 +39,6 @@
       <li class="page__scroll__btn {{activeIndex==4?'active':''}}" bindtap="changeTag" data-index="4"></li>
     </ul>
 
-    <!-- <view class="page__bd__notice">
-      <image src="../../assets/icons/trumpet.png" />
-      <a class="page__notice__content">盒马云超市来啦！0门槛包邮！上海外环内可包邮到家！</a>
-      <a class="page__notice__right">1/1</a>
-    </view> -->
-
     <ul class="page__bd__sorts center">
       <van-grid column-num="5">
         <van-grid-item use-slot wx:for="{{ icons }}" wx:for-item="idx" wx:for-item="item">
@@ -84,36 +78,6 @@
             </view>
           </view>
         </block>
-
-
-
-        <!-- <block wx:for="{{scrollXList}}" wx:key="index" wx:for-index="index">
-          <view class="scrollx-section__content__item">
-            <view class="scrollx-section__item__wrapper">
-              <view class="view__wrapper__image">
-                  <image src="{{item.image}}" />
-              </view>
-              <view class="view__wrapper__intro">
-                <view class="wrapper__intro__title">
-                  <text>{{item.name}}</text>
-                  <text>{{item.secName}}</text>
-                </view>
-                <view class="wrapper__intro__content left">
-                  <text>{{item.leftTitle}}</text>
-                  <text>{{item.leftSecTitle}}</text>
-                </view>
-                <view class="wrapper__intro__content right">
-                    <text>{{item.rightTitle}}</text>
-                    <text>{{item.rightSecTitle}}</text>
-                </view>
-                <view class="wrapper__intro__price">
-                  <a>￥{{item.price}}</a><a>/{{item.unit}}</a><a id="{{index}}" bindtap="addInCart">+</a>
-                </view>
-              </view>
-            </view>
-          </view>
-        </block> -->
-      <!-- </scroll-view> -->
     </view>
 
   </view>

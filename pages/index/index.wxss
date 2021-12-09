@@ -281,7 +281,6 @@
   width: 100%;
   display: block;
   overflow: hidden;
-  margin-top: 40rpx;
 }
 .wrapper__intro__price a {
   color: #ff7c2a;
