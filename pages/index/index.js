@@ -38,12 +38,11 @@ Page({
     })
   },
   linkToList: function(e) {
-    // console.log(e.currentTarget.id);
     // 将用户点击的分类保存在全局变量中，用于页面跳转后的商品显示
     app.globalData.goodsSortsChoice = e.currentTarget.id;
     // console.log(app.globalData.goodsSortsChoice);
     wx.navigateTo({
-      url: "../goodsList/goodsList"
+      url: "../goodsList/goodsList?selectedId=" + e.currentTarget.id,
     })
   },
   addInCart: function(e) {

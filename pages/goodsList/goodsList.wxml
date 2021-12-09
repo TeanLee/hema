@@ -11,12 +11,27 @@
     </view>
     <view class="goodsList__bd">
         <scroll-view scroll-y>
-
-            <block wx:for="{{goods}}" wx:key="index" wx:for-index="index">
+            <van-cell-group inset>
+                <van-cell wx:for="{{goods}}" wx:key="index" wx:for-index="index">
+                    <view slot="title">
+                        <van-card
+                            price="{{item.price}}"
+                            desc="{{item.subTitle}}"
+                            title="{{item.title}}"
+                            thumb="{{item.banner}}"
+                            >
+                            <view slot="footer">
+                                <van-icon style="font-size: 40rpx;" name="cart-o" />
+                            </view>
+                        </van-card>
+                    </view>
+                </van-cell>
+            </van-cell-group>
+            <!-- <block wx:for="{{goods}}" wx:key="index" wx:for-index="index">
                 <view class="weui-cells">
                     <view class="weui-cell">
                         <view class="weui-cell__hd">
-                            <image src="{{item.image}}" />
+                            <image src="{{item.banner}}" />
                         </view>
                         <view class="weui-cell__bd">
                             <view class="goodsList__bd__intro">{{item.name}}</view>
@@ -27,7 +42,7 @@
                         </view>
                     </view>
                 </view>
-            </block>
+            </block> -->
         </scroll-view>
     </view>
     <view class="goodsList__ft"></view>

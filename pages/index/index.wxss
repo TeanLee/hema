@@ -160,6 +160,7 @@
   width: 682rpx;
   height: 70rpx;
   margin-top: 100rpx;
+  margin-bottom: 50rpx;
   /* outline: 1px solid red; */
   margin-left: 38rpx;
   line-height: 70rpx;
@@ -298,4 +299,12 @@
   font-weight: 800;
   /* margin-top: 6rpx; */
   margin-right: 30rpx;
+}
+
+.van-card {
+  padding: 0 !important;
+}
+
+.van-cell {
+  padding: 0 !important;
 }

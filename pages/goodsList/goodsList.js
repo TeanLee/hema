@@ -9,13 +9,15 @@ Page({
     goods: []
   },
   onLoad: function (options) {
+    const selectedId = options.selectedId; // 获取跳转页面传递过来的id
     wx.request({
       // 获取所有分类的商品信息
-      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods",
+      url: "http://localhost:8080/products/" + selectedId,
       success: (res) => {
+        console.log(res.data)
         this.setData({
           // app.globalData.goodsSortsChoice从全局变量中获取上一步用户点击的分类是哪一个
-          goods: res.data.data[app.globalData.goodsSortsChoice]
+          goods: res.data
         })
       }
     })
