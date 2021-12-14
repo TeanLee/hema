@@ -41,7 +41,7 @@
 
     <ul class="page__bd__sorts center">
       <van-grid column-num="5">
-        <van-grid-item use-slot wx:for="{{ icons }}" wx:for-item="idx" wx:for-item="item" wx:for-index="key" bindtap="linkToList"  id="{{key}}">
+        <van-grid-item use-slot wx:for="{{ icons }}" wx:for-item="idx" wx:for-item="item" wx:for-index="key" bindtap="linkToList"  id="{{key}}" wx:key="key">
           <i style="font-size: 60rpx;color: {{item.color}};" class="iconfont {{item.icon}}"></i>
           <span style="font-size: 24rpx;">{{item.name}}</span>
         </van-grid-item>
@@ -80,25 +80,34 @@
         </block> -->
 
         <scroll-view scroll-y>
-            <van-cell-group inset>
-                <van-cell wx:for="{{scrollXList}}" wx:key="index" wx:for-index="index">
-                    <view slot="title">
-                        <van-card
-                            price="{{item.price}}"
-                            desc="{{item.subTitle}}"
-                            title="{{item.title}}"
-                            thumb="{{item.banner}}"
-                            >
-                            <view slot="footer">
-                                <van-icon style="font-size: 40rpx;" name="cart-o" />
-                            </view>
-                        </van-card>
-                    </view>
-                </van-cell>
-            </van-cell-group>
+          <van-cell-group inset>
+            <van-cell wx:for="{{scrollXList}}" wx:key="index" wx:for-index="index">
+              <view slot="title">
+                <van-card
+                  price="{{item.price}}"
+                  desc="{{item.subTitle}}"
+                  title="{{item.title}}"
+                  thumb="{{item.banner}}"
+                  >
+                  <view slot="footer">
+                    <van-icon bindtap="addInCart" style="font-size: 40rpx;" name="cart-o" />
+                  </view>
+                </van-card>
+              </view>
+            </van-cell>
+          </van-cell-group>
         </scroll-view>
     </view>
-
+    <van-popup
+      show="{{ show }}"
+      close-on-click-overlay="false"
+      round="true"
+      position="bottom"
+      bind:close="onClose"
+      custom-style="height:120rpx"
+    >
+    <button bindtap="bindGetUserInfo" class="btnPhone {{wechat_name !=''?'btnPhoneActive':''}}">授权登录</button>
+    </van-popup>
   </view>
 
   <view class="page__ft"></view>

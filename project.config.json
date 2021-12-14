@@ -28,7 +28,7 @@
             "outputPath": ""
         },
         "enableEngineNative": false,
-        "useIsolateContext": true,
+        "useIsolateContext": false,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": true,
         "packNpmRelationList": [
@@ -45,7 +45,7 @@
     },
     "compileType": "miniprogram",
     "libVersion": "1.6.6",
-    "appid": "wx60e5b66676b65e44",
+    "appid": "wx88d23088018e0fae",
     "projectname": "hema",
     "condition": {
         "search": {

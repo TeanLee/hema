@@ -10,7 +10,18 @@ Page({
     goodsSorts: [], // 商品的十种分类   用于获取商品分类信息，显示在页面上
     icons: [], // 首页商品分类
     scrollXList: [], // “今日王牌大赏所有内容”
+
+    show: true,
   },
+
+  showPopup() {
+    this.setData({ show: true });
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
   scan: function() {
     wx.scanCode({
       success: (res) => {
@@ -91,6 +102,48 @@ Page({
     })
     this.setData({
       goodsSorts: ["https://gtms03.alicdn.com/tps/i3/TB1gXd1JXXXXXapXpXXvKyzTVXX-520-280.jpg"]
+    })
+  },
+  bindGetUserInfo: function(res) {
+    console.log("bindGetUserInfo");
+    var that = this
+    // getUserProfile
+    wx.getUserProfile({
+      desc: '展示用户信息',    //不能为空
+        success(res){
+          console.log("xinban获取用户信息",res)
+          const { nickName } = JSON.parse(res.rawData);
+          console.log(nickName);
+          that.postUsername(nickName);
+          that.setData({
+            wechat_name:res.userInfo.nickName,
+            headimgurl:res.userInfo.avatarUrl,
+            province:res.userInfo.province,
+            country:res.userInfo.country,
+            gender:res.userInfo.gender,
+            city:res.userInfo.city,
+        })
+        wx.showToast({
+          title: '授权成功!', // 标题
+          icon: 'success',  // 图标类型，默认success
+          duration: 1500  // 提示窗停留时间，默认1500ms
+        })
+      }      
+    })
+    this.setData({ show: false });
+   },
+  // 向后端发送当前用户名信息
+  postUsername: function(username) {
+    wx.request({
+      url: 'http://localhost:8080/user/login',
+      method: "POST",
+      data: {
+        "username": username
+      },
+      // 请求中带参数时，需要指定请求头中的内容，否则后端会识别失败（则默认content-type为application/json）
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
     })
   },
   getUserInfo: function(e) {
