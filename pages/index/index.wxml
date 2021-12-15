@@ -81,7 +81,7 @@
 
         <scroll-view scroll-y>
           <van-cell-group inset>
-            <van-cell wx:for="{{scrollXList}}" wx:key="index" wx:for-index="index">
+            <van-cell wx:for="{{scrollXList}}" wx:for-item="item" wx:for-index="key" id="{{key}}" wx:key="key">
               <view slot="title">
                 <van-card
                   price="{{item.price}}"
@@ -90,7 +90,7 @@
                   thumb="{{item.banner}}"
                   >
                   <view slot="footer">
-                    <van-icon bindtap="addInCart" style="font-size: 40rpx;" name="cart-o" />
+                    <van-icon data-productid="{{item.productId}}" bindtap="addInCart" style="font-size: 40rpx;" name="cart-o" />
                   </view>
                 </van-card>
               </view>
