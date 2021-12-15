@@ -56,7 +56,13 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-card": "@vant/weapp/card/index",
     "van-icon": "@vant/weapp/icon/index",
-    "van-popup": "@vant/weapp/popup/index"
+    "van-popup": "@vant/weapp/popup/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index"
   },
   "sitemapLocation": "sitemap.json"
 }

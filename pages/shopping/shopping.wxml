@@ -3,16 +3,15 @@
         <view class="shopping__hd__content">
             <view class="shopping__title">
                 购物车
-                <a class="shopping__title__delete right" bindtap="delGoods">删除</a>
             </view>
         </view>
     </view>
     <view class="shopping__bd">
-        <view class="weui-cells">
-            <block wx:for="{{goodsList}}" wx:key="index" data-index="index">
+        <van-checkbox-group value="{{ result }}" bind:change="onChange">
+            <block wx:for="{{goodsList}}" wx:key="index" wx:for-item="item" data-index="index">
                 <view class="weui-cell">
                     <view class="weui-cell__hd">
-                        <icon id="{{index}}" bindtap="selectGoods" type="{{item.type}}" color="#23a3ff"></icon>
+                        <van-checkbox name="{{index}}" bindtap="switchSelect" data-index="{{index}}" icon-size="35rpx"></van-checkbox>
                     </view>
                     <view class="weui-cell__bd">
                         <image src="{{item.banner}}" />
@@ -28,19 +27,15 @@
                     </view>
                 </view>
             </block>
-        </view>
+        </van-checkbox-group>
     </view>
     <view class="shopping__ft">
-        <view class="shopping__ft__hd">
-            <icon bindtap="selOrUnsel" type="{{allStatus}}" color="#23a3ff"></icon>
-            全选
-        </view>
-        <view class="shopping__ft__bd">
-            <text>合计：</text>
-            <text>￥{{sum}}</text>
-        </view>
-        <view class="shopping__ft__ft" bindtap="toOrder">
-            去结算
-        </view>
+        <van-submit-bar
+            price="{{sum*100}}"
+            button-text="提交订单"
+            bind:submit="onClickButton"
+            label="合计 "
+            >
+        </van-submit-bar>
     </view>
 </view>

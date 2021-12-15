@@ -7,29 +7,74 @@ Page({
    */
   data: {
     goodsList: [], // 商品展示的列表
-    sum: 0, // 总的钱数
-    allStatus: "circle" // 商品是否全选的标志，很巧妙的是，这个标志可以定义小圆圈是钩还是空心圆
+    sum: 999, // 总的钱数
+    allStatus: "circle", // 商品是否全选的标志，很巧妙的是，这个标志可以定义小圆圈是钩还是空心圆
+    checked: true,
+    result: [],
+    checked: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const cardList = app.globalData.cardList;
-    cardList.map(item => {
-      item.type = "success";
-    });
-    this.setData({
-      // 页面加载时就给购物车显示商品数量
-      goodsList: cardList
-    });
+    this.getShoppingCartProducts();
+
     this.data.goodsList.map(item => {
-      item.type = "success";
+      item.selected = false;
     });
     // 页面加载完成前就开始计算总钱数用于显示
     this.sumMoney();
     // 页面加载完成前就判断完商品是否全选，并指定全选的状态
     this.allSelected();
+  },
+  onChange(event) {
+    console.log(event.detail);
+    this.setData({
+      result: event.detail,
+    });
+  },
+  onChangeCheckbox(event) {
+    this.setData({
+      checked: event.detail,
+    });
+  },
+  switchSelect(event) {
+    const { index } = event.currentTarget.dataset;
+    console.log("switch Select：", index);
+    
+    const tempList = this.data.goodsList;
+    if(tempList[index].selected == true) {
+      tempList[index].selected = false;
+    } else {
+      tempList[index].selected = true;
+    }
+
+    this.setData({
+      goodsList: tempList
+    })
+
+    this.allSelected();
+    this.sumMoney();
+  },
+  getShoppingCartProducts: function() {
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8080/shopping-cart/all',
+      success: (res) => {
+        const { data } = res;
+        data.forEach(element => {
+          element.selected = false
+        });
+        this.setData({
+          goodsList: data
+        })
+        console.log(data);
+      }
+    })
+  },
+  onClickButton() {
+    console.log(this.data.goodsList);
   },
   // 增加商品数量
   addCount:function (e) {
@@ -40,6 +85,16 @@ Page({
       goodsList: that.data.goodsList
     })
     this.sumMoney();
+    wx.request({
+      url: "http://localhost:8080/shopping-cart/add",
+      method: "POST",
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        "productId": that.data.goodsList[goodId].productId
+      }
+    })
   },
   // 减少商品数量
   reduceCount: function(e) {
@@ -47,13 +102,36 @@ Page({
     const goodId = e.currentTarget.id;
     if(that.data.goodsList[goodId].count <= 1) {
       that.data.goodsList[goodId].count = 1;
-      wx.showModal({
-        title: '数量小于1',
-        content: '不允许操作',
-        duration: 2000
+      wx.request({
+        url: "http://localhost:8080/shopping-cart/delete",
+        method: "DELETE",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          "productId": that.data.goodsList[goodId].productId
+        },
+        success: (res) => {
+          wx.showToast({
+            title: '删除成功!', // 标题
+            icon: 'success',
+            duration: 1500  // 提示窗停留时间，默认1500ms
+          })
+        }
       })
+      
     } else {
       that.data.goodsList[goodId].count--;
+      wx.request({
+        url: "http://localhost:8080/shopping-cart/cut",
+        method: "POST",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data: {
+          "productId": that.data.goodsList[goodId].productId
+        }
+      })
     }
     this.setData({
       goodsList: that.data.goodsList
@@ -65,7 +143,7 @@ Page({
     var count = 0;
     const goods = this.data.goodsList;
     for(let i = 0; i < goods.length; i++) {
-      if(goods[i].type === "success") {
+      if(goods[i].selected) {
         count += goods[i].count*goods[i].price;
       }
     }
@@ -91,16 +169,11 @@ Page({
   // 用来判断是否全选
   allSelected: function() {
     const goods = this.data.goodsList;
-    var symbol = goods.some(good => {
-      return good.type === "circle"
+    var symbol = goods.every(good => {
+      return good.selected == true
     })
-    if(symbol) {
-      this.data.allStatus = "circle"
-    } else {
-      this.data.allStatus = "success"
-    }
     this.setData({
-      allStatus: this.data.allStatus
+      checked: symbol
     })
   },
   selOrUnsel: function() {
