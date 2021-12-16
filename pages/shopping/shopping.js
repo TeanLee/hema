@@ -8,7 +8,6 @@ Page({
   data: {
     goodsList: [], // 商品展示的列表
     sum: 999, // 总的钱数
-    allStatus: "circle", // 商品是否全选的标志，很巧妙的是，这个标志可以定义小圆圈是钩还是空心圆
     checked: true,
     result: [],
     checked: false,
@@ -20,16 +19,11 @@ Page({
   onLoad: function (options) {
     this.getShoppingCartProducts();
 
-    this.data.goodsList.map(item => {
-      item.selected = false;
-    });
+    this.clearSelected();
     // 页面加载完成前就开始计算总钱数用于显示
     this.sumMoney();
-    // 页面加载完成前就判断完商品是否全选，并指定全选的状态
-    this.allSelected();
   },
   onChange(event) {
-    console.log(event.detail);
     this.setData({
       result: event.detail,
     });
@@ -41,7 +35,6 @@ Page({
   },
   switchSelect(event) {
     const { index } = event.currentTarget.dataset;
-    console.log("switch Select：", index);
     
     const tempList = this.data.goodsList;
     if(tempList[index].selected == true) {
@@ -54,7 +47,6 @@ Page({
       goodsList: tempList
     })
 
-    this.allSelected();
     this.sumMoney();
   },
   getShoppingCartProducts: function() {
@@ -69,7 +61,6 @@ Page({
         this.setData({
           goodsList: data
         })
-        console.log(data);
       }
     })
   },
@@ -151,57 +142,6 @@ Page({
       sum: count.toFixed(2)
     })
   },
-  selectGoods: function(e) {
-    // 根据index找到用户点击的是哪一件商品
-    const selected = this.data.goodsList[e.currentTarget.id];
-    // 改变选中商品的type属性  通过这种方式标记出哪些商品被选中了，以及改变最前面是钩还是圆圈
-    if(selected.type === "success") {
-      selected.type = "circle";
-    } else {
-      selected.type = "success";
-    }
-    this.setData({
-      goodsList: this.data.goodsList
-    })
-    this.allSelected();
-    this.sumMoney();
-  },
-  // 用来判断是否全选
-  allSelected: function() {
-    const goods = this.data.goodsList;
-    var symbol = goods.every(good => {
-      return good.selected == true
-    })
-    this.setData({
-      checked: symbol
-    })
-  },
-  selOrUnsel: function() {
-    // 获得全选按钮和商品列表
-    const status = this.data.allStatus;
-    const goods = this.data.goodsList;
-    // 点击按钮后查看当前全选框的状态，对其进行取反的改变，并且对商品进行全选或反选
-    if(status === "success") {
-      this.data.allStatus = "circle";
-      // 遍历商品列表的每一项进行判断
-      goods.map(good => {
-        good.type = "circle";
-      })
-    } else {
-      this.data.allStatus = "success";
-      goods.map(good => {
-        good.type = "success";
-      })
-    }
-    // 将结果设置回页面上进行显示
-    this.setData({
-      goodsList: this.data.goodsList
-    })
-    this.setData({
-      allStatus: this.data.allStatus
-    })
-    this.sumMoney();
-  },
   // 删除商品
   delGoods: function() {
     const goods = this.data.goodsList;
@@ -230,6 +170,17 @@ Page({
     })
     this.sumMoney();
   },
+  // 清空所有商品的选中状态
+  clearSelected() {
+    let tempList = this.data.goodsList;
+    tempList.forEach(item => {
+      item.selected = false;
+    })
+    this.setData({
+      goodsList: tempList,
+      result: []
+    })
+  },
   toOrder: function() {
     wx.navigateTo({
       url: "../order/order"
@@ -240,57 +191,32 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({
-      // 页面加载时就给购物车显示商品数量
-      goodsList: app.globalData.cardList
-    });
-    this.sumMoney();
-    this.data.goodsList.map(item => {
-      item.type = "success";
-    });
+    this.clearSelected();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      // 页面加载时就给购物车显示商品数量
-      goodsList: app.globalData.cardList
-    });
-    this.sumMoney();
-    this.data.goodsList.map(item => {
-      item.type = "success";
-    });
-    this.onLoad();
+    this.clearSelected();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    this.setData({
-      // 页面加载时就给购物车显示商品数量
-      goodsList: app.globalData.cardList
-    });
-    this.sumMoney();
-    this.data.goodsList.map(item => {
-      item.type = "success";
-    });
+    this.clearSelected();
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    this.setData({
-      // 页面加载时就给购物车显示商品数量
-      goodsList: app.globalData.cardList
-    });
-    this.sumMoney();
-    this.data.goodsList.map(item => {
-      item.type = "success";
-    });
+    this.clearSelected();
+  },
+
+  onTabItemTap: function (item) {
+    this.clearSelected();
   },
 
   /**

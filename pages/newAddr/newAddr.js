@@ -6,7 +6,6 @@ Page({
    */
   data: {
     address: '',
-    num: '',
     name: '',
     phone: ''
   },
