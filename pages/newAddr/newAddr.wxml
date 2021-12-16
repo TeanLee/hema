@@ -1,12 +1,12 @@
 <view class="newAddr__hd">
     <text class="newAddr__add left" bindtap="backToChooseAddr">返回</text>
     <text class="newAddr__title">选择收货地址</text>
-    <text bindtap="saveInfo" class="newAddr__add right">保存</text>
+    <!-- <text bindtap="saveInfo" class="newAddr__add right">保存</text> -->
 </view>
 <view class="newAddr__bd">
     <van-cell-group>
         <van-field
-            value="{{ address }}"
+            model:value="{{ address }}"
             required
             clearable
             label="收货地址"
@@ -14,7 +14,7 @@
         />
         <van-divider />
         <van-field
-            value="{{ name }}"
+            model:value="{{ receiver }}"
             required
             clearable
             label="联系人"
@@ -22,7 +22,7 @@
         />
         <van-divider />
         <van-field
-            value="{{ phone }}"
+            model:value="{{ phone }}"
             required
             clearable
             label="手机号"
@@ -30,5 +30,5 @@
         />
         <van-divider />
     </van-cell-group>
-    <van-button round type="info" size="large" color="#0eb6ff">保存</van-button>
+    <van-button round type="info" size="large" color="#0eb6ff" bind:click="saveInfo">保存</van-button>
 </view>

@@ -7,8 +7,7 @@ Page({
   data: {
     userInfo: {},
     address: '',
-    num: '',
-    name: '',
+    receiver: '',
     phone: ''
   },
   addNewAddr: function() {
@@ -20,8 +19,19 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function () {
+    // wx.request({
+    //   url: 'http://localhost:8080/user/info',
+    //   success: (res) => {
+    //     const { address, phone, receiver} = res.data;
+    //     console.log("address：" + address)
+    //     this.setData({
+    //       address,
+    //       phone,
+    //       receiver
+    //     })
+    //   }
+    // })
   },
 
   /**
@@ -35,19 +45,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    wx.getStorage({
-      key: "name",
-      success: function(res) {
-        console.log(res);
-        if(res.data.length > 0) {
-          that.setData({
-            address: res.data[0].address,
-            num: res.data[1].num,
-            name: res.data[2].name,
-            phone: res.data[3].phone
-          })
-        }
+    wx.request({
+      url: 'http://localhost:8080/user/info',
+      success: (res) => {
+        const { address, phone, receiver} = res.data;
+        console.log("address：" + address)
+        this.setData({
+          address,
+          phone,
+          receiver
+        })
       }
     })
   },

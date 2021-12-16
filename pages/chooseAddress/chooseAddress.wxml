@@ -1,6 +1,6 @@
 <view class="choose-addr__hd">
     <text class="choose-addr__title">选择收货地址</text>
-    <text class="choose-addr__add right" bindtap="addNewAddr">{{userInfo.address ? "修改" : "新增"}}地址</text>
+    <text class="choose-addr__add right" bindtap="addNewAddr">{{address ? "修改" : "新增"}}地址</text>
 </view>
 <view class="choose-addr__bd">
     <!-- <view class="choose-addr__bd__input">
@@ -11,12 +11,12 @@
         <text>我的收货地址</text>
         
         <view class="choose-addr__bd__session">
-            <view wx:if="{{!userInfo.address}}">
+            <view wx:if="{{!address}}">
                 <van-empty description="收货地址为空" />
             </view>
             <view wx:else>
-                <text>{{userInfo.username}} {{userInfo.phone}}</text>
-                <text>{{userInfo.address}}</text>
+                <text>{{receiver}} {{phone}}</text>
+                <text>{{address}}</text>
             </view>
         </view>
     </view>

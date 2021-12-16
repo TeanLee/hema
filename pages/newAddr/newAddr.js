@@ -6,7 +6,7 @@ Page({
    */
   data: {
     address: '',
-    name: '',
+    receiver: '',
     phone: ''
   },
   backToChooseAddr: function() {
@@ -14,31 +14,19 @@ Page({
       url: "../chooseAddress/chooseAddress"
     });
   },
-  getAddress: function(e) {
-    this.setData({
-      address: e.detail.value
-    })
-  },
-  getNum: function(e) {
-    this.setData({
-      num: e.detail.value
-    })
-  },
-  getName: function(e) {
-    this.setData({
-      name: e.detail.value
-    })
-  },
-  getPhone: function(e) {
-    this.setData({
-      phone: e.detail.value
-    })
-  },
   // 用户点击保存后，对输入的数据进行存储，并反馈存储状态
   saveInfo: function() {
-    wx.setStorage({
-      key: "name",
-      data: [{address:this.data.address}, {num: this.data.num}, {name: this.data.name}, {phone: this.data.phone}],
+    console.log("saveInfo", this.data.receiver);
+    const { address, receiver, phone }= this.data;
+
+    wx.request({
+      url: 'http://localhost:8080/user/set-info',
+      method: "POST",
+      data: {
+        address,
+        receiver,
+        phone
+      },
       success: function() {
         wx.showToast({
           title: "地址保存成功",
@@ -46,12 +34,15 @@ Page({
           duration: 2000
         })
         setTimeout(function(){
-          wx.navigateTo({
+          wx.navigateBack({
             url: "../chooseAddress/chooseAddress"
           })
         },1000);
-        
-      }
+      },
+      // 请求中带参数时，需要指定请求头中的内容，否则后端会识别失败（则默认content-type为application/json）
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
     })
   },
 
@@ -59,7 +50,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.request({
+      url: 'http://localhost:8080/user/info',
+      success: (res) => {
+        const { address, phone, receiver} = res.data;
+        console.log("address：" + address)
+        this.setData({
+          address,
+          phone,
+          receiver
+        })
+      }
+    })
   },
 
   /**
