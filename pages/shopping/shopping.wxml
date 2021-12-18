@@ -33,7 +33,7 @@
         <van-submit-bar
             price="{{sum*100}}"
             button-text="提交订单"
-            bind:submit="onClickButton"
+            bind:submit="submitOrder"
             label="合计 "
             >
         </van-submit-bar>

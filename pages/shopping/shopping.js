@@ -64,8 +64,38 @@ Page({
       }
     })
   },
-  onClickButton() {
-    console.log(this.data.goodsList);
+  submitOrder() {
+    const { goodsList } = this.data;
+    const orders = [];
+    goodsList.forEach(item => {
+      if(item.selected) {
+        orders.push({
+          "productId": item.productId,
+          "count": item.count
+        })
+      }
+    })
+    console.log(orders);
+
+    wx.request({
+      url: "http://localhost:8080/order/add",
+      method: "POST",
+      header: {
+        'content-type': 'application/json' // 说明向后端传递的是 json 数据
+      },
+      data: {
+        "orderItem": orders
+      },
+      success: (res) => {
+        wx.showToast({
+          title: '订单提交成功!', // 标题
+          icon: 'success',
+          duration: 1500  // 提示窗停留时间，默认1500ms
+        })
+        // 订单提交成功后，要在购物车表中删除已经购买的数据
+        this.getShoppingCartProducts();
+      }
+    })
   },
   // 增加商品数量
   addCount:function (e) {
@@ -191,6 +221,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.getShoppingCartProducts();
     this.clearSelected();
   },
 
