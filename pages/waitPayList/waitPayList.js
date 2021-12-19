@@ -8,6 +8,29 @@ Page({
       ordersList: []
     },
 
+    changeStatus(e) {
+      const { index } = e.currentTarget.dataset;
+      wx.request({
+        url: "http://localhost:8080/order/update-status",
+        method: "POST",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data:{
+          "status": 1,
+          "orderId": this.data.ordersList[index][0].orderId
+        },
+        success: (res) => {
+          this.reload();
+          wx.showToast({
+            title: '支付成功!', // 标题
+            icon: 'success',
+            duration: 1500  // 提示窗停留时间，默认1500ms
+          })
+        }
+      })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -26,18 +49,25 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        wx.request({
-            url: "http://localhost:8080/order/list-detail",
-            method: "GET",
-            header: {
-              'content-type': 'application/x-www-form-urlencoded'
-            },
-            success: (res) => {
-              this.setData({
-                ordersList: res.data
-              })
-            }
+        this.reload();
+    },
+
+    reload() {
+      wx.request({
+        url: "http://localhost:8080/order/list-detail",
+        method: "GET",
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        data:{
+          "status": 0
+        },
+        success: (res) => {
+          this.setData({
+            ordersList: res.data
           })
+        }
+      })
     },
 
     /**
