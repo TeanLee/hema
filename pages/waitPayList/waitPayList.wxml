@@ -14,7 +14,7 @@
         thumb="{{ item.product.banner }}"
       />
     </block>
-    <van-button custom-style="margin-left:550rpx;" round type="danger" size="small" data-index="{{idx}}" bindtap="changeStatus">立即付款</van-button>
+    <van-button wx:if="{{orderStatus === '0'}}" custom-style="margin-left:550rpx;" round type="danger" size="small" data-index="{{idx}}" bindtap="changeStatus">立即付款</van-button>
   </view>
 </block>
 

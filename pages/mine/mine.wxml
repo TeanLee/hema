@@ -15,13 +15,13 @@
     <view class="mine__bd">
         <view class="mine__bd__ul">
             <ul>
-                <li bindtap="linkToWaitPay">
+                <li bindtap="linkToWaitPay" data-status="0">
                     <view class="image center">
                         <image src="../../assets/icons/wallet.png" />
                     </view>
                     <p>待付款</p>
                 </li>
-                <li>
+                <li bindtap="linkToWaitPay" data-status="1">
                     <view class="image center">
                         <image src="../../assets/icons/package.png" />
                     </view>

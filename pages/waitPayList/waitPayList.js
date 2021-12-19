@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-      ordersList: []
+      ordersList: [],
+      orderStatus: "-1"
     },
 
     changeStatus(e) {
@@ -35,7 +36,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      const { status } = options;
+      this.setData({
+        orderStatus: status
+      })
+      this.reload(status);
     },
 
     /**
@@ -49,10 +54,10 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.reload();
+      // this.reload();
     },
 
-    reload() {
+    reload(status) {
       wx.request({
         url: "http://localhost:8080/order/list-detail",
         method: "GET",
@@ -60,7 +65,7 @@ Page({
           'content-type': 'application/x-www-form-urlencoded'
         },
         data:{
-          "status": 0
+          "status": status
         },
         success: (res) => {
           this.setData({

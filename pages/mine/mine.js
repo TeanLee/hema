@@ -8,9 +8,11 @@ Page({
   
   },
 
-  linkToWaitPay() {
+  linkToWaitPay(e) {
+    console.log(e);
+    const { status } = e.currentTarget.dataset;
     wx.navigateTo({
-      url: "../waitPayList/waitPayList"
+      url: "../waitPayList/waitPayList?status=" + status
     })
   },
 
