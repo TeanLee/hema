@@ -94,6 +94,7 @@ Page({
         })
         // 订单提交成功后，要在购物车表中删除已经购买的数据
         this.getShoppingCartProducts();
+        this.clearSelected();
       }
     })
   },
@@ -221,7 +222,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getShoppingCartProducts();
     this.clearSelected();
   },
 
@@ -229,6 +229,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getShoppingCartProducts();
     this.clearSelected();
   },
 

@@ -6,3 +6,8 @@
   "integrity" "sha1-QGF0wR0/Qh277/mVpVbOHTBimQg="
   "resolved" "https://rg.cnpmjs.org/@vant/weapp/download/@vant/weapp-1.9.2.tgz"
   "version" "1.9.2"
+
+"lodash@^4.17.21":
+  "integrity" "sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw="
+  "resolved" "https://r.cnpmjs.org/lodash/download/lodash-4.17.21.tgz"
+  "version" "4.17.21"

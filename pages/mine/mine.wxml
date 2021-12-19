@@ -15,7 +15,7 @@
     <view class="mine__bd">
         <view class="mine__bd__ul">
             <ul>
-                <li>
+                <li bindtap="linkToWaitPay">
                     <view class="image center">
                         <image src="../../assets/icons/wallet.png" />
                     </view>

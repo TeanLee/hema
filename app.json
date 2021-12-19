@@ -1,71 +1,72 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/goodsList/goodsList",
-    "pages/shopping/shopping",
-    "pages/newAddr/newAddr",
-    "pages/chooseAddress/chooseAddress",
-    "pages/sort/sort",
-    "pages/mine/mine",
-    "pages/order/order",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0eb6ff",
-    "navigationBarTitleText": "盒马生鲜",
-    "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "color": "#a1a1a1",
-    "selectedColor": "#2af8ff",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "./assets/icons/hema.png",
-        "selectedIconPath": "./assets/icons/hema-sel.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/sort/sort",
-        "iconPath": "./assets/icons/sort.png",
-        "selectedIconPath": "./assets/icons/sort-sel.png",
-        "text": "分类"
-      },
-      {
-        "pagePath": "pages/shopping/shopping",
-        "iconPath": "./assets/icons/shopping.png",
-        "selectedIconPath": "./assets/icons/shopping-sel.png",
-        "text": "购物车"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "iconPath": "./assets/icons/mine.png",
-        "selectedIconPath": "./assets/icons/mine-sel.png",
-        "text": "我的"
-      }
-    ]
-  },
-  "usingComponents": {
-    "van-grid": "@vant/weapp/grid/index",
-    "van-grid-item": "@vant/weapp/grid-item/index",
-    "van-button": "@vant/weapp/button/index",
-    "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-card": "@vant/weapp/card/index",
-    "van-icon": "@vant/weapp/icon/index",
-    "van-popup": "@vant/weapp/popup/index",
-    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
-    "van-checkbox": "@vant/weapp/checkbox/index",
-    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
-    "van-submit-bar": "@vant/weapp/submit-bar/index",
-    "van-radio": "@vant/weapp/radio/index",
-    "van-radio-group": "@vant/weapp/radio-group/index",
-    "van-empty": "@vant/weapp/empty/index",
-    "van-field": "@vant/weapp/field/index",
-    "van-divider": "@vant/weapp/divider/index"
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/goodsList/goodsList",
+        "pages/shopping/shopping",
+        "pages/newAddr/newAddr",
+        "pages/chooseAddress/chooseAddress",
+        "pages/sort/sort",
+        "pages/mine/mine",
+        "pages/order/order",
+        "pages/logs/logs",
+        "pages/waitPayList/waitPayList"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#0eb6ff",
+        "navigationBarTitleText": "盒马生鲜",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#a1a1a1",
+        "selectedColor": "#2af8ff",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "./assets/icons/hema.png",
+                "selectedIconPath": "./assets/icons/hema-sel.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/sort/sort",
+                "iconPath": "./assets/icons/sort.png",
+                "selectedIconPath": "./assets/icons/sort-sel.png",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/shopping/shopping",
+                "iconPath": "./assets/icons/shopping.png",
+                "selectedIconPath": "./assets/icons/shopping-sel.png",
+                "text": "购物车"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "iconPath": "./assets/icons/mine.png",
+                "selectedIconPath": "./assets/icons/mine-sel.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "van-grid": "@vant/weapp/grid/index",
+        "van-grid-item": "@vant/weapp/grid-item/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-card": "@vant/weapp/card/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+        "van-checkbox": "@vant/weapp/checkbox/index",
+        "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+        "van-submit-bar": "@vant/weapp/submit-bar/index",
+        "van-radio": "@vant/weapp/radio/index",
+        "van-radio-group": "@vant/weapp/radio-group/index",
+        "van-empty": "@vant/weapp/empty/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-divider": "@vant/weapp/divider/index"
+    },
+    "sitemapLocation": "sitemap.json"
 }

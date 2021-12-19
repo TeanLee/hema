@@ -1,0 +1,21 @@
+<view wx:if="{{!ordersList.length}}">
+  <van-empty description="暂无订单" />
+</view>
+
+<block wx:else>
+  <view wx:for="{{ordersList}}" wx:for-index="idx" wx:for-item="order">
+    <p class="list_header">订单{{idx + 1}}</p>
+    <block wx:for="{{order}}" wx:for-index="id" wx:for-item="item">
+      <van-card
+        num="{{item.count}}"
+        price="{{item.product.price}}"
+        desc="{{item.product.subTitle}}"
+        title="{{item.product.title}}"
+        thumb="{{ item.product.banner }}"
+      />
+    </block>
+    <van-button custom-style="margin-left:550rpx;" round type="danger" size="small">立即付款</van-button>
+  </view>
+</block>
+
+

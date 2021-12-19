@@ -6,6 +6,11 @@
             </view>
         </view>
     </view>
+
+    <view wx:if="{{!goodsList.length}}">
+        <van-empty description="购物车空空如也" />
+    </view>
+
     <view class="shopping__bd">
         <van-checkbox-group value="{{ result }}" bind:change="onChange">
             <block wx:for="{{goodsList}}" wx:key="index" wx:for-item="item" data-index="index">
