@@ -1,3 +1,4 @@
+const API = require("../../api/main");
 const app = getApp();
 // pages/goodsList/goodsList.js
 Page({
@@ -10,19 +11,13 @@ Page({
   },
   onLoad: function (options) {
     const selectedId = options.selectedId; // 获取跳转页面传递过来的id
-    wx.request({
-      // 获取所有分类的商品信息
-      url: "http://localhost:8080/product/get-by-category-id",
-      data: {
-        categoryId: selectedId
-      },
-      success: (res) => {
-        console.log(res.data)
-        this.setData({
-          // app.globalData.goodsSortsChoice从全局变量中获取上一步用户点击的分类是哪一个
-          goods: res.data
-        })
-      }
+
+    API.getProductsByCategoryId({
+      "categoryId": selectedId
+    }).then(res => {
+      this.setData({
+        goods: res
+      })
     })
   },
   toSort: function() {
@@ -35,22 +30,14 @@ Page({
     this.addToCart(productid);
   },
   addToCart: function(productId) {
-    wx.request({
-      url: "http://localhost:8080/shopping-cart/add",
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        "productId": productId
-      },
-      success: (res) => {
-        wx.showToast({
-          title: '加购成功!', // 标题
-          icon: 'success',
-          duration: 1500  // 提示窗停留时间，默认1500ms
-        })
-      }
+    API.addToCart({
+      "productId": productId
+    }).then(() => {
+      wx.showToast({
+        title: '加购成功!', // 标题
+        icon: 'success',
+        duration: 1500  // 提示窗停留时间，默认1500ms
+      })
     })
   },
 

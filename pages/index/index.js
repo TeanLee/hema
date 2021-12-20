@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+const API = require("../../api/main")
 const app = getApp()
 
 Page({
@@ -50,8 +51,6 @@ Page({
   },
   linkToList: function(e) {
     // 将用户点击的分类保存在全局变量中，用于页面跳转后的商品显示
-    app.globalData.goodsSortsChoice = e.currentTarget.id;
-    // console.log(app.globalData.goodsSortsChoice);
     wx.navigateTo({
       url: "../goodsList/goodsList?selectedId=" + e.currentTarget.id,
     })
@@ -65,35 +64,27 @@ Page({
     
   },
   onLoad: function () {
-    wx.request({
-      url: "http://localhost:8080/product/list",
-      success: (res) => {
-        this.setData({
-          scrollXList: res.data
-        })
-      }
+    API.getProductList().then(res => {
+      this.setData({
+        scrollXList: res
+      })
     })
-    wx.request({
-      url: "http://localhost:8080/category",
-      success: (res) => {
-        this.setData({
-          icons: res.data
-        })
-      }
+    API.getCategory().then(res => {
+      this.setData({
+        icons: res
+      })
     })
     this.setData({
       goodsSorts: ["https://gtms03.alicdn.com/tps/i3/TB1gXd1JXXXXXapXpXXvKyzTVXX-520-280.jpg"]
     })
   },
   bindGetUserInfo: function(res) {
-    console.log("bindGetUserInfo");
     var that = this
     // getUserProfile
     wx.getUserProfile({
       desc: '展示用户信息',    //不能为空
         success(res){
           const { nickName } = JSON.parse(res.rawData);
-          console.log(nickName);
           that.postUsername(nickName);
           that.setData({
             wechat_name:res.userInfo.nickName,
@@ -114,35 +105,19 @@ Page({
    },
   // 向后端发送当前用户名信息
   postUsername: function(username) {
-    wx.request({
-      url: 'http://localhost:8080/user/login',
-      method: "POST",
-      data: {
-        "username": username
-      },
-      // 请求中带参数时，需要指定请求头中的内容，否则后端会识别失败（则默认content-type为application/json）
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
+    API.login({
+      "username": username
     })
   },
   addToCart: function(productId) {
-    wx.request({
-      url: "http://localhost:8080/shopping-cart/add",
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        "productId": productId
-      },
-      success: (res) => {
-        wx.showToast({
-          title: '加购成功!', // 标题
-          icon: 'success',
-          duration: 1500  // 提示窗停留时间，默认1500ms
-        })
-      }
+    API.addToCart({
+      "productId": productId
+    }).then(() => {
+      wx.showToast({
+        title: '加购成功!', // 标题
+        icon: 'success',
+        duration: 1500  // 提示窗停留时间，默认1500ms
+      })
     })
   },
   getUserInfo: function(e) {

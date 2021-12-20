@@ -1,3 +1,4 @@
+const API = require("../../api/main");
 const app = getApp();
 // pages/shopping/shopping.js
 Page({
@@ -50,18 +51,13 @@ Page({
     this.sumMoney();
   },
   getShoppingCartProducts: function() {
-    var that = this;
-    wx.request({
-      url: 'http://localhost:8080/shopping-cart/all',
-      success: (res) => {
-        const { data } = res;
-        data.forEach(element => {
-          element.selected = false
-        });
-        this.setData({
-          goodsList: data
-        })
-      }
+    API.getShoppingCart().then(res => {
+      res.forEach(element => {
+        element.selected = false
+      });
+      this.setData({
+        goodsList: res
+      })
     })
   },
   submitOrder() {
@@ -77,25 +73,18 @@ Page({
     })
     console.log(orders);
 
-    wx.request({
-      url: "http://localhost:8080/order/add",
-      method: "POST",
-      header: {
-        'content-type': 'application/json' // 说明向后端传递的是 json 数据
-      },
-      data: {
-        "orderItem": orders
-      },
-      success: (res) => {
-        wx.showToast({
-          title: '订单提交成功!', // 标题
-          icon: 'success',
-          duration: 1500  // 提示窗停留时间，默认1500ms
-        })
-        // 订单提交成功后，要在购物车表中删除已经购买的数据
-        this.getShoppingCartProducts();
-        this.clearSelected();
-      }
+    API.addOrder({
+      "orderItem": orders
+      // 'content-type': 'application/json' // 说明向后端传递的是 json 数据
+    }, "json").then(() => {
+      wx.showToast({
+        title: '订单提交成功!', // 标题
+        icon: 'success',
+        duration: 1500  // 提示窗停留时间，默认1500ms
+      })
+      // 订单提交成功后，要在购物车表中删除已经购买的数据
+      this.getShoppingCartProducts();
+      this.clearSelected();
     })
   },
   // 增加商品数量
@@ -107,15 +96,9 @@ Page({
       goodsList: that.data.goodsList
     })
     this.sumMoney();
-    wx.request({
-      url: "http://localhost:8080/shopping-cart/add",
-      method: "POST",
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      data: {
-        "productId": that.data.goodsList[goodId].productId
-      }
+
+    API.addToCart({
+      "productId": that.data.goodsList[goodId].productId
     })
   },
   // 减少商品数量
@@ -124,35 +107,20 @@ Page({
     const goodId = e.currentTarget.id;
     if(that.data.goodsList[goodId].count <= 1) {
       that.data.goodsList[goodId].count = 1;
-      wx.request({
-        url: "http://localhost:8080/shopping-cart/delete",
-        method: "DELETE",
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          "productId": that.data.goodsList[goodId].productId
-        },
-        success: (res) => {
-          wx.showToast({
-            title: '删除成功!', // 标题
-            icon: 'success',
-            duration: 1500  // 提示窗停留时间，默认1500ms
-          })
-        }
+      API.deleteCart({
+        "productId": that.data.goodsList[goodId].productId
+      }).then(() => {
+        wx.showToast({
+          title: '删除成功!', // 标题
+          icon: 'success',
+          duration: 1500  // 提示窗停留时间，默认1500ms
+        })
+        this.getShoppingCartProducts();
       })
-      
     } else {
       that.data.goodsList[goodId].count--;
-      wx.request({
-        url: "http://localhost:8080/shopping-cart/cut",
-        method: "POST",
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        data: {
-          "productId": that.data.goodsList[goodId].productId
-        }
+      API.cutCartCount({
+        "productId": that.data.goodsList[goodId].productId
       })
     }
     this.setData({

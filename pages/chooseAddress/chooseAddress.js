@@ -1,4 +1,5 @@
 // pages/chooseAddress/chooseAddress.js
+const API = require("../../api/main");
 Page({
 
   /**
@@ -20,18 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    // wx.request({
-    //   url: 'http://localhost:8080/user/info',
-    //   success: (res) => {
-    //     const { address, phone, receiver} = res.data;
-    //     console.log("address：" + address)
-    //     this.setData({
-    //       address,
-    //       phone,
-    //       receiver
-    //     })
-    //   }
-    // })
+    
   },
 
   /**
@@ -45,17 +35,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.request({
-      url: 'http://localhost:8080/user/info',
-      success: (res) => {
-        const { address, phone, receiver} = res.data;
-        console.log("address：" + address)
-        this.setData({
-          address,
-          phone,
-          receiver
-        })
-      }
+    API.getUserInfo().then(res => {
+      const { address, phone, receiver} = res;
+      this.setData({
+        address,
+        phone,
+        receiver
+      })
     })
   },
 

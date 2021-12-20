@@ -1,3 +1,4 @@
+const API = require("../../api/main")
 const app = getApp()
 // pages/sort/sort.js
 Page({
@@ -22,47 +23,34 @@ Page({
     this.setData({
       loadingSidebar: true
     })
-    wx.request({
-      url: 'http://localhost:8080/category',
-      success: (res) => {
-        console.log("res.data", res.data);
-        this.setData({
-          sidebarSorts: res.data,
-          loadingSidebar: false,
-        })
-      },
-      finally: () => {
-        this.setData({
-          loadingSidebar: false,
-        })
-      }
+
+    API.getCategory().then(res => {
+      this.setData({
+        sidebarSorts: res,
+        loadingSidebar: false,
+      })
+    }).finally(() => {
+      this.setData({
+        loadingSidebar: false,
+      })
     })
   },
   getProductsByCategoryId(activeKey) {
     this.setData({
       loadingRight: true
     })
-    wx.request({
-      url: 'http://localhost:8080/product/get-by-category-id',
-      data: {
-        "categoryId": activeKey
-      },
-      success: (res) => {
-        console.log("res.data", res.data);
-        this.setData({
-          products: res.data,
-          loadingRight: false,
-        })
-      },
-      finally: () => {
-        this.setData({
-          products: res.data,
-          loadingRight: false,
-        })
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
+
+    API.getProductsByCategoryId({
+      "categoryId": activeKey
+    }).then(res => {
+      this.setData({
+        products: res,
+        loadingRight: false,
+      })
+    }).finally(() => {
+      this.setData({
+        loadingRight: false,
+      })
     })
   },
   linkToList: function(e) {

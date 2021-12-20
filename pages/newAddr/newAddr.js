@@ -1,3 +1,4 @@
+const API = require("../../api/main");
 // pages/newAddr/newAddr.js
 Page({
 
@@ -19,48 +20,35 @@ Page({
     console.log("saveInfo", this.data.receiver);
     const { address, receiver, phone }= this.data;
 
-    wx.request({
-      url: 'http://localhost:8080/user/set-info',
-      method: "POST",
-      data: {
-        address,
-        receiver,
-        phone
-      },
-      success: function() {
-        wx.showToast({
-          title: "地址保存成功",
-          icon: 'success',
-          duration: 2000
+    API.setUserInfo({
+      address,
+      receiver,
+      phone
+    }).then(res => {
+      wx.showToast({
+        title: "地址保存成功",
+        icon: 'success',
+        duration: 2000
+      })
+      setTimeout(function(){
+        wx.navigateBack({
+          url: "../chooseAddress/chooseAddress"
         })
-        setTimeout(function(){
-          wx.navigateBack({
-            url: "../chooseAddress/chooseAddress"
-          })
-        },1000);
-      },
-      // 请求中带参数时，需要指定请求头中的内容，否则后端会识别失败（则默认content-type为application/json）
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
+      },1000);
     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    wx.request({
-      url: 'http://localhost:8080/user/info',
-      success: (res) => {
-        const { address, phone, receiver} = res.data;
-        console.log("address：" + address)
-        this.setData({
-          address,
-          phone,
-          receiver
-        })
-      }
+  onLoad: function () {
+    API.getUserInfo().then(res => {
+      const { address, phone, receiver} = res;
+      this.setData({
+        address,
+        phone,
+        receiver
+      })
     })
   },
 
