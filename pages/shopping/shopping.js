@@ -12,6 +12,7 @@ Page({
     checked: true,
     result: [],
     checked: false,
+    loading: false
   },
 
   /**
@@ -51,12 +52,16 @@ Page({
     this.sumMoney();
   },
   getShoppingCartProducts: function() {
+    this.setData({
+      loading: true
+    })
     API.getShoppingCart().then(res => {
       res.forEach(element => {
         element.selected = false
       });
       this.setData({
-        goodsList: res
+        goodsList: res,
+        loading: false
       })
     })
   },
@@ -85,6 +90,7 @@ Page({
       // 订单提交成功后，要在购物车表中删除已经购买的数据
       this.getShoppingCartProducts();
       this.clearSelected();
+      this.sumMoney(); // 提交订单后，需要重新计算选中商品的钱数
     })
   },
   // 增加商品数量

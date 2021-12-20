@@ -39,14 +39,16 @@
       <li class="page__scroll__btn {{activeIndex==4?'active':''}}" bindtap="changeTag" data-index="4"></li>
     </ul>
 
-    <ul class="page__bd__sorts center">
-      <van-grid column-num="5">
-        <van-grid-item use-slot wx:for="{{ icons }}" wx:for-item="idx" wx:for-item="item" wx:for-index="key" bindtap="linkToList"  id="{{key}}" wx:key="key">
-          <i style="font-size: 60rpx;color: {{item.color}};" class="iconfont {{item.icon}}"></i>
-          <span style="font-size: 24rpx;">{{item.name}}</span>
-        </van-grid-item>
-      </van-grid>
-    </ul>
+    <van-skeleton row="24" loading="{{ loadingCategories }}">
+      <ul class="page__bd__sorts center">
+        <van-grid column-num="5">
+          <van-grid-item use-slot wx:for="{{ icons }}" wx:for-item="idx" wx:for-item="item" wx:for-index="key" bindtap="linkToList"  id="{{key}}" wx:key="key">
+            <i style="font-size: 60rpx;color: {{item.color}};" class="iconfont {{item.icon}}"></i>
+            <span style="font-size: 24rpx;">{{item.name}}</span>
+          </van-grid-item>
+        </van-grid>
+      </ul>
+    </van-skeleton>
 
     <view class="page__bd__scrollx-section">
       <view class="scrollx-section__title">
@@ -59,26 +61,8 @@
           <a class="left"></a>
         </view>
       </view>
-      <!-- <scroll-view scroll-x class="scrollx-section__content"> -->
-      <!-- <block wx:for="{{scrollXList}}" wx:key="index" wx:for-index="index">
-          <view class="scrollx-section__content__item">
-            <view class="scrollx-section__item__wrapper">
-              <view class="view__wrapper__image">
-                  <image src="{{item.banner}}" />
-              </view>
-              <view class="view__wrapper__intro">
-                <view class="wrapper__intro__title">
-                  <text>{{item.title}}</text>
-                  <text>{{item.subTitle}}</text>
-                </view>
-                <view class="wrapper__intro__price">
-                  <a>￥{{item.price}}</a><a>/{{item.unit}}</a><a id="{{index}}" bindtap="addInCart">+</a>
-                </view>
-              </view>
-            </view>
-          </view>
-        </block> -->
 
+      <van-skeleton row="24" loading="{{ loadingProducts }}">
         <scroll-view scroll-y>
           <van-cell-group inset>
             <van-cell wx:for="{{scrollXList}}" wx:for-item="item" wx:for-index="key" id="{{key}}" wx:key="key">
@@ -97,6 +81,7 @@
             </van-cell>
           </van-cell-group>
         </scroll-view>
+      </van-skeleton>
     </view>
     <van-popup
       show="{{ show }}"

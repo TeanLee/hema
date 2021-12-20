@@ -7,7 +7,8 @@ Page({
      */
     data: {
       ordersList: [],
-      orderStatus: "-1"
+      orderStatus: "-1",
+      loading: false
     },
 
     changeStatus(e) {
@@ -53,12 +54,15 @@ Page({
     },
 
     reload(status) {
-
+      this.setData({
+        loading: true
+      })
       API.listOrders({
         "status": status === "undefined" ? "" : status
       }).then(res => {
         this.setData({
-          ordersList: res
+          ordersList: res,
+          loading: false
         })
       })
     },

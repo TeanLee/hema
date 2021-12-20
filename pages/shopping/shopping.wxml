@@ -7,33 +7,35 @@
         </view>
     </view>
 
-    <view wx:if="{{!goodsList.length}}">
+    <view wx:if="{{!goodsList.length && !loading}}">
         <van-empty description="购物车空空如也" />
     </view>
 
-    <view class="shopping__bd">
-        <van-checkbox-group value="{{ result }}" bind:change="onChange">
-            <block wx:for="{{goodsList}}" wx:key="index" wx:for-item="item" data-index="index">
-                <view class="weui-cell">
-                    <view class="weui-cell__hd">
-                        <van-checkbox name="{{index}}" bindtap="switchSelect" data-index="{{index}}" icon-size="35rpx"></van-checkbox>
-                    </view>
-                    <view class="weui-cell__bd">
-                        <image src="{{item.banner}}" />
-                    </view>
-                    <view class="weui-cell__ft right">
-                        <text class="proIntr left">{{item.title}}</text>
-                        <text class="price left">￥{{item.price}}/{{item.unit}}</text>
-                        <view class="count">
-                            <text class="reduce left" bindtap="reduceCount" id="{{index}}">-</text>
-                            <text class="number left">{{item.count}}</text>
-                            <text class="add left" bindtap="addCount" id="{{index}}">+</text>
+    <van-skeleton row="24" loading="{{ loading }}">
+        <view class="shopping__bd">
+            <van-checkbox-group value="{{ result }}" bind:change="onChange">
+                <block wx:for="{{goodsList}}" wx:key="index" wx:for-item="item" data-index="index">
+                    <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <van-checkbox name="{{index}}" bindtap="switchSelect" data-index="{{index}}" icon-size="35rpx"></van-checkbox>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <image src="{{item.banner}}" />
+                        </view>
+                        <view class="weui-cell__ft right">
+                            <text class="proIntr left">{{item.title}}</text>
+                            <text class="price left">￥{{item.price}}/{{item.unit}}</text>
+                            <view class="count">
+                                <text class="reduce left" bindtap="reduceCount" id="{{index}}">-</text>
+                                <text class="number left">{{item.count}}</text>
+                                <text class="add left" bindtap="addCount" id="{{index}}">+</text>
+                            </view>
                         </view>
                     </view>
-                </view>
-            </block>
-        </van-checkbox-group>
-    </view>
+                </block>
+            </van-checkbox-group>
+        </view>
+    </van-skeleton>
     <view class="shopping__ft">
         <van-submit-bar
             price="{{sum*100}}"

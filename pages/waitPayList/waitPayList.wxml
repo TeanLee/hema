@@ -1,21 +1,23 @@
-<view wx:if="{{!ordersList.length}}">
+<view wx:if="{{!ordersList.length && !loading}}">
   <van-empty description="暂无订单" />
 </view>
 
 <block wx:else>
-  <view wx:for="{{ordersList}}" wx:for-index="idx" wx:for-item="order" wx:key="idx">
-    <p class="list_header">订单{{idx + 1}}</p>
-    <block wx:for="{{order}}" wx:for-index="id" wx:for-item="item" wx:key="index">
-      <van-card
-        num="{{item.count}}"
-        price="{{item.product.price}}"
-        desc="{{item.product.subTitle}}"
-        title="{{item.product.title}}"
-        thumb="{{ item.product.banner }}"
-      />
-    </block>
-    <van-button wx:if="{{orderStatus === '0'}}" custom-style="margin-left:550rpx;" round type="danger" size="small" data-index="{{idx}}" bindtap="changeStatus">立即付款</van-button>
-  </view>
+  <van-skeleton row="24" loading="{{ loading }}">
+    <view wx:for="{{ordersList}}" wx:for-index="idx" wx:for-item="order" wx:key="idx">
+      <p class="list_header">订单{{idx + 1}}</p>
+      <block wx:for="{{order}}" wx:for-index="id" wx:for-item="item" wx:key="index">
+        <van-card
+          num="{{item.count}}"
+          price="{{item.product.price}}"
+          desc="{{item.product.subTitle}}"
+          title="{{item.product.title}}"
+          thumb="{{ item.product.banner }}"
+        />
+      </block>
+      <van-button wx:if="{{orderStatus === '0'}}" custom-style="margin-left:550rpx;" round type="danger" size="small" data-index="{{idx}}" bindtap="changeStatus">立即付款</van-button>
+    </view>
+  </van-skeleton>
 </block>
 
 

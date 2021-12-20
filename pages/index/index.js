@@ -11,6 +11,8 @@ Page({
     goodsSorts: [], // 商品的十种分类   用于获取商品分类信息，显示在页面上
     icons: [], // 首页商品分类
     scrollXList: [], // “今日王牌大赏所有内容”
+    loadingProducts: false,
+    loadingCategories: false,
 
     show: true,
   },
@@ -64,14 +66,20 @@ Page({
     
   },
   onLoad: function () {
+    this.setData({
+      loadingProducts: true,
+      loadingCategories: true
+    })
     API.getProductList().then(res => {
       this.setData({
-        scrollXList: res
+        scrollXList: res,
+        loadingProducts: false
       })
     })
     API.getCategory().then(res => {
       this.setData({
-        icons: res
+        icons: res,
+        loadingCategories: false
       })
     })
     this.setData({
