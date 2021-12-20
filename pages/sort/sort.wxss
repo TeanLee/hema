@@ -2,6 +2,34 @@
     width: 100%;
     height: 100%;
 }
+.sort .title-class {
+    height: 80rpx;
+    width: 350rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+}
+.sort .thumb-class {
+    width: 100rpx;
+    height: 100rpx;
+}
+.sort .desc-class {
+    width: 350rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.sort .van-card__thumb {
+    width: 100rpx;
+    height: 100rpx;
+}
+.sort .van-card {
+    padding: 0 !important;
+}
+.sort .van-cell-group--inset {
+    margin: 0 !important;
+}
 .sort__hd {
     width: 100%;
     height: 104rpx;

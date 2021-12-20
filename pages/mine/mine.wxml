@@ -39,7 +39,7 @@
                     </view>
                     <p>待评价</p>
                 </li>
-                <li class="last">
+                <li class="last" bindtap="linkToWaitPay">
                     <view class="image center">
                         <image src="../../assets/icons/order.png" />
                     </view>

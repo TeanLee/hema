@@ -7,7 +7,63 @@ Page({
    */
   data: {
     // 存储在easymock中   界面需要的数据
-    sortItems: []
+    sortItems: [],
+    activeKey: 0,
+    sidebarSorts: [],
+    loadingSidebar: false,
+    loadingRight: false,
+    products: [],
+  },
+  onChange(event) {
+    console.log("onChangeonChange", event.detail);
+    this.getProductsByCategoryId(event.detail);
+  },
+  getCategories() {
+    this.setData({
+      loadingSidebar: true
+    })
+    wx.request({
+      url: 'http://localhost:8080/category',
+      success: (res) => {
+        console.log("res.data", res.data);
+        this.setData({
+          sidebarSorts: res.data,
+          loadingSidebar: false,
+        })
+      },
+      finally: () => {
+        this.setData({
+          loadingSidebar: false,
+        })
+      }
+    })
+  },
+  getProductsByCategoryId(activeKey) {
+    this.setData({
+      loadingRight: true
+    })
+    wx.request({
+      url: 'http://localhost:8080/product/get-by-category-id',
+      data: {
+        "categoryId": activeKey
+      },
+      success: (res) => {
+        console.log("res.data", res.data);
+        this.setData({
+          products: res.data,
+          loadingRight: false,
+        })
+      },
+      finally: () => {
+        this.setData({
+          products: res.data,
+          loadingRight: false,
+        })
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+    })
   },
   linkToList: function(e) {
     console.log(e.currentTarget.id);
@@ -22,16 +78,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: "https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/sortItems",
-      success: (res) => {
-        console.log(res.data.data);
-        res.data.data.sorts = ["https://gtms03.alicdn.com/tps/i3/TB1gXd1JXXXXXapXpXXvKyzTVXX-520-280.jpg"]
-        this.setData({
-          sortItems: res.data.data.sorts
-        })
-      }
-    })
+    
   },
 
   /**
@@ -45,7 +92,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getCategories();
+    this.getProductsByCategoryId(0);
   },
 
   /**

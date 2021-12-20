@@ -66,7 +66,12 @@
         "van-radio-group": "@vant/weapp/radio-group/index",
         "van-empty": "@vant/weapp/empty/index",
         "van-field": "@vant/weapp/field/index",
-        "van-divider": "@vant/weapp/divider/index"
+        "van-divider": "@vant/weapp/divider/index",
+        "van-sidebar": "@vant/weapp/sidebar/index",
+        "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-skeleton": "@vant/weapp/skeleton/index"
     },
     "sitemapLocation": "sitemap.json"
 }

@@ -1,4 +1,46 @@
-<view class="sort">
+<van-skeleton row="24" loading="{{ loadingSidebar }}">
+    <view class="sort">
+        <van-row>
+            <van-col span="6">
+                <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+                    <block wx:for="{{sidebarSorts}}" wx:for-index="idx" wx:for-item="item" wx:key="key">
+                        <van-sidebar-item title="{{item.category}}" />
+                    </block>
+                </van-sidebar>
+            </van-col>
+            <van-col span="18">
+                <van-skeleton row="24" loading="{{ loadingRight }}">
+                    <van-empty wx:if="{{!products.length}}" description="该分类暂无产品" />
+                    <scroll-view wx:else scroll-y>
+                        <van-cell-group inset>
+                            <van-cell wx:for="{{products}}" wx:for-item="item" wx:for-index="key" id="{{key}}" wx:key="key">
+                            <view slot="title">
+                                <van-card
+                                    price="{{item.price}}"
+                                    desc="{{item.subTitle}}"
+                                    title="{{item.title}}"
+                                    thumb="{{item.banner}}"
+                                    title-class="title-class"
+                                    thumb-class="thumb-class"
+                                    desc-class="desc-class"
+                                >
+                                </van-card>
+                            </view>
+                            </van-cell>
+                        </van-cell-group>
+                    </scroll-view>
+                </van-skeleton>
+            </van-col>
+        </van-row>
+        
+    </view>
+</van-skeleton>
+
+
+
+
+
+<!-- <view class="sort">
     <view class="sort__hd">
         <view class="sort__title">
             <a class="sort__title__text">分类</a>
@@ -19,4 +61,4 @@
             </block>
         </ul>
     </view>
-</view>
+</view> -->

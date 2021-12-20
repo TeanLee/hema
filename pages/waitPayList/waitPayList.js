@@ -64,8 +64,9 @@ Page({
         header: {
           'content-type': 'application/x-www-form-urlencoded'
         },
+        // 根据状态查询订单
         data:{
-          "status": status
+          "status": status === "undefined" ? "" : status
         },
         success: (res) => {
           this.setData({

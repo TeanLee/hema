@@ -66,7 +66,7 @@ Page({
   },
   onLoad: function () {
     wx.request({
-      url: "http://localhost:8080/products",
+      url: "http://localhost:8080/product/list",
       success: (res) => {
         this.setData({
           scrollXList: res.data

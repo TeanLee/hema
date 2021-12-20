@@ -12,7 +12,10 @@ Page({
     const selectedId = options.selectedId; // 获取跳转页面传递过来的id
     wx.request({
       // 获取所有分类的商品信息
-      url: "http://localhost:8080/products/" + selectedId,
+      url: "http://localhost:8080/product/get-by-category-id",
+      data: {
+        categoryId: selectedId
+      },
       success: (res) => {
         console.log(res.data)
         this.setData({
