@@ -94,4 +94,8 @@ module.exports = {
   listOrders: (data) => request('/order/list-detail','get', data),
   // 修改订单状态（0:待付款；1:待配送；2:待评价）
   updateOrder: (data) => request('/order/update-status','post', data),
+
+  //  商品详情页
+  // 根据商品 id 获取商品详情
+  getProductById: (data) => request(`/product/${data}`,'get'),
 }

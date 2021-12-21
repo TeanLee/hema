@@ -40,6 +40,12 @@ Page({
       })
     })
   },
+  navigateToDetail(e) {
+    const { productid } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../productDetail/productDetail?productId=' + productid,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

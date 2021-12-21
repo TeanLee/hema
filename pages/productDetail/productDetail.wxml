@@ -1,0 +1,18 @@
+<!--pages/productDetail/productDetail.wxml-->
+<view class="product-detail">
+    <van-image width="320" height="220" fit="contain" lazy-load src="{{product.banner}}" />
+    <van-divider />
+    <text class="price"><text style="font-size: 40rpx;">¥</text> {{product.price}}</text>
+    <text class="title">{{product.title}}</text>
+
+
+    <van-goods-action>
+        <van-goods-action-icon icon="cart-o" text="购物车" bind:click="linkToShoppingCart" />
+        <van-goods-action-button
+            text="加入购物车"
+            type="warning"
+            bind:click="addToCart"
+        />
+        <van-goods-action-button text="立即购买" bind:click="onClickBuy" />
+    </van-goods-action>
+</view>

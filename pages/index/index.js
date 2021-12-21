@@ -128,6 +128,12 @@ Page({
       })
     })
   },
+  navigateToDetail(e) {
+    const { productid } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../productDetail/productDetail?productId=' + productid,
+    })
+  },
   getUserInfo: function(e) {
     
   }

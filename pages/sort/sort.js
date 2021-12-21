@@ -61,6 +61,24 @@ Page({
       url: "../goodsList/goodsList"
     })
   },
+  addInCart(e) {
+    const { productid } = e.currentTarget.dataset;
+    API.addToCart({
+      "productId": productid
+    }).then(() => {
+      wx.showToast({
+        title: '加购成功!', // 标题
+        icon: 'success',
+        duration: 1500  // 提示窗停留时间，默认1500ms
+      })
+    })
+  },
+  navigateToDetail(e) {
+    const { productid } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../productDetail/productDetail?productId=' + productid,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

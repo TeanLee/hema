@@ -9,7 +9,8 @@
         "pages/mine/mine",
         "pages/order/order",
         "pages/logs/logs",
-        "pages/waitPayList/waitPayList"
+        "pages/waitPayList/waitPayList",
+        "pages/productDetail/productDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -71,7 +72,12 @@
         "van-sidebar-item": "@vant/weapp/sidebar-item/index",
         "van-row": "@vant/weapp/row/index",
         "van-col": "@vant/weapp/col/index",
-        "van-skeleton": "@vant/weapp/skeleton/index"
+        "van-skeleton": "@vant/weapp/skeleton/index",
+        "van-image": "@vant/weapp/image/index",
+        "van-goods-action": "@vant/weapp/goods-action/index",
+        "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+        "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+        "van-nav-bar": "@vant/weapp/nav-bar/index"
     },
     "sitemapLocation": "sitemap.json"
 }
