@@ -50,23 +50,23 @@ pages
 ├── waitPayList -- 订单列表页
 ````
 
-## 运行结果展示
+## 运行结果展示（演示地址：https://juejin.cn/post/7044352698660945934/）
 ### 首页、分类页
 实现了商品分类功能、商品列表页。
 
-<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/83c24657e31746c08b98de9a87b77a70~tplv-k3u1fbpfcp-watermark.image?" width="40%">
+https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/83c24657e31746c08b98de9a87b77a70~tplv-k3u1fbpfcp-watermark.awebp?
 
 ### 商品详情页和商品分类页
 实现了简要的商品详情展示。在详情页面，有商品详情展示、将商品加入购物车、提供快速购买的功能、还能直接跳转至购物车。
 
-<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2994e6f153f6464997ee26870bb8053e~tplv-k3u1fbpfcp-watermark.image?" width="40%">
+https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2994e6f153f6464997ee26870bb8053e~tplv-k3u1fbpfcp-watermark.image?
 
 ### 购物车
 实现加入购物车的商品展示，购物车商品的增、删、改的功能。简易实现了购物车下单的功能，在购物车选中点击下单的商品都会被标记为待付款的订单，可在「我的」-> 「待付款」页面查看。
 
-<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/627a1e4b97af4dcab137736f6738854a~tplv-k3u1fbpfcp-watermark.image?" width="40%">
+https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/627a1e4b97af4dcab137736f6738854a~tplv-k3u1fbpfcp-watermark.image?
 
 ### 订单页面
 实现了简易的商品购买、订单查询的功能。用户点击立即购买的商品会变成待支付的订单。在「我的」->「待付款」页面点击「立即付款」，则订单会变成“待配送”状态，可在「我的」->「待配送」页面查看支付后的订单。「我的」->「全部订单」可查看所有状态的订单。
 
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25d89a7f412f412baba5423e93a6b8fa~tplv-k3u1fbpfcp-watermark.image?" width="40%">
+https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25d89a7f412f412baba5423e93a6b8fa~tplv-k3u1fbpfcp-watermark.image?
